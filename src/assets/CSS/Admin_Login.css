@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.Home {
+  height: 80%;
+  top: 142px;
+  left: 80px;
+  right: 80px;
+  background: url(Images/Background.png) no-repeat center fixed;
+  background-size: cover;
+  position: absolute;
+  border-radius: 30px;
+}
+.header h1 {
+  font-size: 40px;
+  margin: 10px 0 30px;
+  line-height: 80px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.header p {
+  font-size: 21px;
+  margin: 10px 0 30px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.Company {
+  color: black;
+  text-decoration: none;
+  color: rgba(33, 67, 97, 0.753);
+  font-size: 28px;
+  font-weight: 510;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+nav {
+  display:flex;
+  padding: 2% 3%;
+  justify-content: space-between;
+  align-items: center;
+}
+nav img {
+  width: 80px;
+  border-radius: 8px;
+}
+.nav-links {
+  flex: 1;
+  text-align: right;
+}
+.nav-links ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+.nav-links ul li a {
+  color: black;
+  text-decoration: none;
+  font-size: 17.5px;
+  font-weight: 510;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.nav-links ul li::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #49c858;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+.nav-links ul li:hover::after {
+  width: 100%;
+}
+.text-box {
+  width: 90%;
+  color: black;
+  position: absolute;
+  border-radius: 15px;
+  top: 45%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text-box h1 {
+  font-size: 40px;
+  margin: 10px 0 30px;
+  line-height: 80px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.text-box p {
+  font-size: 21px;
+  margin: 10px 0 30px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.hero-btn {
+  display: inline-block;
+  text-decoration: none;
+  color: rgb(52, 167, 190);
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 8px;
+  padding: 12px 34px;
+  font-size: 16px;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+}
+.hero-btn:hover {
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(52, 167, 190);
+  background: rgb(52, 167, 190);
+}
+nav .fa-solid {
+  display: none;
+}
+div .fa-solid{
+  padding-bottom: 20px;
+  font-size: 60px;
+}
+
+.fa-brands {
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+}
+
+body,input{
+    font-family: 'Poppins', sans-serif;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.title {
+    font-size: 2.2rem;
+    color: #444;
+    margin-bottom: 10px;  
+}
+
+.input-field {
+    max-width: 380px;
+    width: 100%;
+    height: 55px;
+    
+    background-color: #f0f0f0;
+    margin: 10px 0;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+    position: relative;
+}
+
+.input-field i{
+    text-align: center;
+    line-height: 55px;
+    color:#c0a52b;
+    font-size: 1.58rem;
+}
+
+.input-field input{
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: rgb(250, 41, 41);
+}
+
+.input-field input:placeholder-shown {
+    color: #aaa;
+    font-weight: 500;
+}
+
+.btn{
+    width: 150px;
+    height: 53px;
+    outline: none;
+    border: none;
+    border-radius: 48px;
+    background-color: #4590b1;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+    transition: all 0.5s;
+}
+
+.btn:hover{
+    background-color: #138808;
+}
+
+.signin-signup {
+    position: relative;
+    height: 40%;
+    width: 40%;
+    left: 40%;
+    border-radius: 25px;
+    background-color: rgba(202, 202, 202, 0.534);
+    transform: translate(-50% -50%);
+    display: grid;
+    grid-template-columns: 1fr;
+
+}
+
+@media (max-width: 700px) {
+    .text-box h1 {
+      font-size: 30px;
+    }
+    .text-box p {
+      font-size: 18px;
+    }
+    .nav-links ul li {
+      display: block;
+    }
+    nav .fa-solid {
+      display: block;
+      color: rgb(0, 0, 0);
+      margin: 10px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+    .nav-links ul {
+      padding: 30px;
+    }
+    .nav-links {
+      position: absolute;
+      background: #fff;
+      height: 100vh;
+      width: 200px;
+      top: 0;
+      right: -200px;
+      text-align: left;
+      z-index: 2;
+      transition: 1s;
+    }
+    .nav-links ul {
+      padding: 30px;
+    }
+    .Home {
+      left: 0px;
+      right: 0px;
+      border-radius: 0px;
+    }
+  }
