@@ -27,7 +27,7 @@
     top: 122px;
     left: 60px;
     right: 60px;
-    background: url(Images/Background.png) no-repeat center fixed;
+    background: url(../images/Background.png) no-repeat center fixed;
     background-size: cover;
     background-color: rgba(199, 199, 199, 0.5);
     position: absolute;
@@ -343,7 +343,7 @@ img {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: url(Images/back3.png)no-repeat center fixed;
+    background: url(../images/back3.png)no-repeat center fixed;
     background-size: cover;
     background-size: cover;
 }
