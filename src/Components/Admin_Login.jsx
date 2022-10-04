@@ -1,25 +1,21 @@
 import React, { Component } from 'react';
 
-class Login extends Component {
+class Admin_Login extends Component {
+
     render() { 
-        return (
-      
-          <div>
+        return (<div>
         <div className="header">
           <nav>
             <a href="index.html"><img src="Images/Logo 2.png" /></a>
             <a href="index.html" className="Company">Online Voting System</a>
             <div className="alertPopup">
               <div className="alert" id="A1">
-                <strong>Unsuccess!</strong> Invalid Aadhar number.
+                <strong>Unsuccess!</strong> Invalid Usename/Password.
               </div>
               <div className="alert success" id="A2">
-                <strong>Success!</strong> Your Aadhar is validated
+                <strong>Success!</strong> Login Successfull.
               </div>
-              <div className="alert info" id="A3">
-                <strong>Captcha!</strong> Incorrect CAPTCHA.
-              </div>
-              <div className="alert warning" id="A4"> 
+              <div className="alert warning" id="A3"> 
                 <strong>Warning!</strong> Please fill the Fields.
               </div>
             </div>
@@ -27,7 +23,7 @@ class Login extends Component {
               <i className="fa-solid fa-rectangle-xmark" onclick="hideMenu()" />
               <ul>
                 <li><a href="index.html">HOME</a></li>
-                <li><a href="Admin_Login.html">ADMIN LOGIN</a></li>
+                <li><a href="login.html">VOTER LOGIN</a></li>
               </ul>
             </div>
             <i className="fa-solid fa-bars" onclick="showMenu()" />
@@ -38,28 +34,22 @@ class Login extends Component {
             <div className="signin-signup">
               <form action="#" className="sign-in-form">
                 <i className="fa-solid fa-circle-user" />
-                <h2 className="title">Voter</h2>
+                <h2 className="title">Admin</h2>  
                 <div className="input-field">
-                  <i className="fas fa-user" />
-                  <input type="number" id="Aadhar" placeholder="Aadhar Number" />
+                  <i className="fas fa-user" /> 
+                  <input type="email" placeholder="Username" id="username" />
                 </div>  
-                <div className=" input-field">
+                <div className="input-field">
                   <i className="fas fa-lock" />
-                  <input type="text" id="Captcha" placeholder="Enter CAPTCHA" />
+                  <input type="password" placeholder="Password" id="password" />
                 </div>
-                <div className="captcha-box">
-                  <canvas id="myCanvas"> </canvas>
-                  <input type="button" id="refresh" className="btn solid" defaultValue="Refresh" />
-                </div>
-                <input type="button" id="gen_otp" className="btn solid" defaultValue="Generate OTP" />
+                <input type="button" id="Login" className="btn solid" defaultValue="Login" />
               </form>
             </div>
           </div>
         </div>
-      </div>
-
-        );
+      </div>);
     }
 }
  
-export default Login;
+export default Admin_Login;
