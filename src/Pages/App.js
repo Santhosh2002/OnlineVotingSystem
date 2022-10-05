@@ -1,12 +1,10 @@
+import Login from '../Components/Login';
+import '../assets/CSS/login.css';
 
-import Header from '../Components/Header';
-import Home from '../Components/Home';
-import About from '../Components/About';
-import Contact from '../Components/Contact';
-import '../../src/assets/CSS/index.css';
+
 function App() {
   return (
-    <><Header></Header><Home></Home><About></About><Contact></Contact></>
+    <><Login></Login></>
   );
 }
 

@@ -6,9 +6,7 @@ ctx.fillStyle = "#000";
 
 let userText = document.querySelector('#Captcha');
 let Aadhar = document.querySelector('#Aadhar');
-let submitButton = document.querySelector('#gen_otp');
 let refreshButton = document.querySelector('#refresh');
-let popupCo = document.getElementById("A2");
 let popupIn = document.getElementById("A1");
 let popupInv = document.getElementById("A4");
 let popupWar = document.getElementById("A3");
@@ -32,9 +30,6 @@ if (e.keyCode === 13) {
 }
 });
 
-submitButton.addEventListener('click', function() {
-login();
-});
 
 refreshButton.addEventListener('click', function() {
     userText.value = "";
