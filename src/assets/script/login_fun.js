@@ -1,5 +1,4 @@
 
-
     let captchaText = document.querySelector('#myCanvas');
     var ctx = captchaText.getContext("2d");
 
@@ -10,7 +9,6 @@
     let Aadhar = document.querySelector('#Aadhar');
     let submitButton = document.querySelector('#gen_otp');
     let refreshButton = document.querySelector('#refresh');
-    let popupCo = document.getElementById("A2");
     let popupIn = document.getElementById("A1");
     let popupInv = document.getElementById("A4");
     let popupWar = document.getElementById("A3");
@@ -31,7 +29,6 @@
     userText.addEventListener('keyup', function(e) {
     if (e.keyCode === 13) {
         login();
-        phoneAuth();
     }
     });
 
