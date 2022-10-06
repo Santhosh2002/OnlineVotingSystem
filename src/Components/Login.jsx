@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 
 import logo from '../assets/images/Logo 2.png';
-import { Helmet } from "react-helmet";
+
 
 class Login extends Component {
     render() { 
       return (
         <>
-        <Helmet>
-          <script src="../assets/scripts/login.js"></script>
-        </Helmet>
+        
           <div className="header">
             <nav>
               <a href="#first"><img src={logo} className="App-logo" alt="logo" /></a>
