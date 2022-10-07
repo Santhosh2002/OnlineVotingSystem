@@ -16,7 +16,7 @@ class About extends Component {
             </div>
             <div className="content_c">
               <h2>Gaurav Verma</h2>
-              <p>Project Lead <br /> FullStack Development with BlockChain</p>
+              <p>Group Member <br /> ------------------</p>
             </div>
           </div>
           <div className="card U2">
@@ -25,7 +25,7 @@ class About extends Component {
             </div>
             <div className="content_c">
               <h2>Sai Santhosh Gadde</h2>
-              <p>Project Lead <br /> FullStack Development with BlockChain</p>
+              <p>Group Member <br /> ------------------</p>
             </div>
           </div>
           <div className="card U3">
@@ -34,7 +34,7 @@ class About extends Component {
             </div>
             <div className="content_c">
               <h2>Lingareddy Sai Charan</h2>
-              <p> abc <br /> ? </p>
+              <p> Group Member <br /> ------------------ </p>
             </div>
           </div>
         </div>
@@ -45,7 +45,7 @@ class About extends Component {
             </div>
             <div className="content_c">
               <h2>Deepanjana Das</h2>
-              <p>Frontend Lead <br /> UI/UX Designers</p>
+              <p>Group Member <br /> ------------------</p>
             </div>
           </div>
           <div className="card U5">
@@ -54,7 +54,7 @@ class About extends Component {
             </div>
             <div className="content_c">
               <h2>Indraneela Doradala</h2>
-              <p>xzc <br /> ?</p>
+              <p> Group Member <br /> ------------------ </p>
             </div>
           </div>
         </div>
