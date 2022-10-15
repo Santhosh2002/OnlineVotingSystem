@@ -1,13 +1,28 @@
 import React, { Component } from 'react';
-
+import Image from '../assets/images/male.png';
+import Image2 from '../assets/images/female.png';
 class About_1 extends Component {
     
     render() {
-        var names = ['Santhosh', 'Gaurav', 'Deepanjana', 'Indraneela'];
+        var names = ['Santhosh', 'Gaurav', 'Lingareddy'];
+        var names2 = ['Deepanjana', 'Indraneela'];
         var nameCard = names.map(function (name) {
             return <div className="card ">
                 <div className="imgBox">
-                <img src="Images/gaurav.png" />
+                <img src={Image} />
+                <h2>{name}</h2>
+                </div>
+                <div className="content_c">
+                        <h2>{name}</h2>
+                <p>Group Member <br /> ------------------</p>
+                </div>
+          </div>
+            
+        })
+        var nameCard2 = names2.map(function (name) {
+            return <div className="card ">
+                <div className="imgBox">
+                <img src={Image2} />
                 <h2>{name}</h2>
                 </div>
                 <div className="content_c">
@@ -24,7 +39,12 @@ class About_1 extends Component {
             <h2>Our team</h2>
             </div>
             <div className="ourteam">
-                {nameCard}
+                    {nameCard}
+                    
+                </div>
+            <div className="ourteam">
+                    {nameCard2}
+                    
             </div>
         </div>);
     }

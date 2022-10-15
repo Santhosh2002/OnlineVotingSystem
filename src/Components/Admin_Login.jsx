@@ -8,17 +8,7 @@ class Admin_Login extends Component {
           <nav>
             <a href="index.html"><img src="Images/Logo 2.png" /></a>
             <a href="index.html" className="Company">Online Voting System</a>
-            <div className="alertPopup">
-              <div className="alert" id="A1">
-                <strong>Unsuccess!</strong> Invalid Usename/Password.
-              </div>
-              <div className="alert success" id="A2">
-                <strong>Success!</strong> Login Successfull.
-              </div>
-              <div className="alert warning" id="A3"> 
-                <strong>Warning!</strong> Please fill the Fields.
-              </div>
-            </div>
+            <Popup type = 'Voter Number' />
             <div className="nav-links" id="navLinks">
               <i className="fa-solid fa-rectangle-xmark" onclick="hideMenu()" />
               <ul>

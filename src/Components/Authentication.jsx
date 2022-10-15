@@ -9,20 +9,7 @@ class Authentication extends Component {
         {/* FORMS STARTS */}
         <div className="Home">
           <div className="text-box">
-            <div className="alertPopup">
-              <div className="alert" id="A1">
-                <strong>Unsuccess!</strong> Invalid Voter number.
-              </div>
-              <div className="alert success" id="A2">
-                <strong>Success!</strong> Your Voter is validated
-              </div>
-              <div className="alert info" id="A3">
-                <strong>Captcha!</strong> Incorrect CAPTCHA.
-              </div>
-              <div className="alert warning" id="A4">
-                <strong>Warning!</strong> Please fill the Fields.
-              </div>
-            </div>
+            <Popup type = 'Voter Number' /> 
             <div className="signin-signup">
               <form action="#" className="sign-in-form">
                 <i className="bx bxs-id-card" />

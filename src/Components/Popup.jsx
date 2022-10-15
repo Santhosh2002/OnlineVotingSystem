@@ -4,7 +4,7 @@ function Popup(props) {
     return (
            <div className="alertPopup">
                 <div className="alert" id="A1">
-                  <strong>Unsuccess!</strong> Invalid {props.type} number.
+                  <strong>Unsuccess!</strong> Invalid {props.type}.
                 </div>
                 <div className="alert success" id="A2">
                   <strong>Success!</strong> Your {props.type} is validated

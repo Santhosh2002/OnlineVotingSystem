@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import logo from '../assets/images/Logo 2.png';
 import Popup from './Popup';
 
@@ -12,7 +11,7 @@ class Login extends Component {
             <nav>
               <a href="#first"><img src={logo} className="App-logo" alt="logo" /></a>
               <a href="index.html" className="Company">Online Voting System</a>
-              <Popup type = 'Aadhar' />
+              <Popup type = 'Aadhar Number' />
               <div className="nav-links" id="navLinks">
                 <i className="fa-solid fa-rectangle-xmark" onClick={['hideMenu']} />
                 <ul>
