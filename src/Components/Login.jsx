@@ -1,31 +1,18 @@
 import React, { Component } from 'react';
 
 import logo from '../assets/images/Logo 2.png';
-
+import Popup from './Popup';
 
 class Login extends Component {
     render() { 
       return (
         <>
-        
+          
           <div className="header">
             <nav>
               <a href="#first"><img src={logo} className="App-logo" alt="logo" /></a>
               <a href="index.html" className="Company">Online Voting System</a>
-              <div className="alertPopup">
-                <div className="alert" id="A1">
-                  <strong>Unsuccess!</strong> Invalid Aadhar number.
-                </div>
-                <div className="alert success" id="A2">
-                  <strong>Success!</strong> Your Aadhar is validated
-                </div>
-                <div className="alert info" id="A3">
-                  <strong>Captcha!</strong> Incorrect CAPTCHA.
-                </div>
-                <div className="alert warning" id="A4">
-                  <strong>Warning!</strong> Please fill the Fields.
-                </div>
-              </div>
+              <Popup type = 'Aadhar' />
               <div className="nav-links" id="navLinks">
                 <i className="fa-solid fa-rectangle-xmark" onClick={['hideMenu']} />
                 <ul>

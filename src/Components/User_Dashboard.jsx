@@ -1,71 +1,77 @@
 import React, { Component } from 'react';
-
+import Topbar from './Top_bar';
 class User_Dashboard extends Component {
-    render() { 
+  render() { 
+    var Data = [
+      { Date: 'Nov 2022',
+        Type: 'State Legislative',
+        Location: 'Himacha Pradesh',
+        Status: 'Ongoing'
+      },
+      { Date: 'Dec 2022',
+        Type: 'State Legislative',
+        Location: 'Gujrat',
+        Status: 'Offline'
+      },
+      { Date: 'TBD',
+        Type: 'Legislative',
+        Location: 'Gopalganj ,bhihar',
+        Status: 'Offline'
+      },
+      { Date: 'Feb 2022',
+        Type: 'State Legislative',
+        Location: 'Uttarakhand',
+        Status: 'Completed'
+      },
+    ];
+    
+      var valueCard = Data.map(function (value) {
+          return <tr>
+                    <td>{value.Date}</td>
+                    <td>{value.Type}</td>
+                    <td>{value.Location}</td>
+                    <td><span className={value.Status}>{value.Status}</span></td>
+                  </tr>
+          
+      })
+    var steps = [
+      {
+        Step: 'Step1',
+        Process: 'Select a Live Poll'
+      },
+      {
+        Step: 'Step2',
+        Process: 'Verify your Voter ID'
+      },
+      {
+        Step: 'Step3',
+        Process: 'View the Candidate List'
+      },
+      {
+        Step: 'Step4',
+        Process: 'Cast your Vote'
+      }];
+    var stepsCard = steps.map(function (value) {
+      return  <div className="card" onClick="popup_toggle()">
+                <div>
+                  <div className="step_number"> {value.Step} </div>
+                  <div className="step_text">{value.Process}</div>
+                </div>
+                <div className="iconbox">
+                  <i className="bx bx-right-arrow-alt" />
+                  <span className="text">Show More</span>
+                </div>
+              </div>
+    })
         return (<div>
         <div className="container" id="blur">
           
           {/* MAIN STARTS*/}
           <div className="main" id="blur2">
-            {/* TOPBAR */}
-            <div className="topbar">
-              {/* TOGGLE BUTTON STARTS*/}
-              <div className="toggle">
-                <i className="bx bx-menu" />
-                <div className="dashboard">Dashboard</div>
-              </div>
-              {/* TOGGLE BUTTON ENDS */}
-              {/* PTOFILE STARTS */}
-              <div className="user">
-                <img src="profile.jpg" alt="" className />
-                <span className="profile_name">Profile</span>
-                <i className="bx bx-chevron-down" />
-              </div>
-              {/* PROFILE ENDS */}
-            </div>
-            {/* TOPBAR ENDS */}
+            <Topbar PageNam = "Dashboard" />
             {/* CARDS STARTS */}
             <div className="cardbox">
-              <div className="card" onclick="popup_toggle()">
-                <div>
-                  <div className="step_number"> Step 1 </div>
-                  <div className="step_text">Select a Live Poll</div>
-                </div>
-                <div className="iconbox">
-                  <i className="bx bx-right-arrow-alt" />
-                  <span className="text">Show More</span>
-                </div>
-              </div>
-              <div className="card" onclick="popup_toggle()">
-                <div>
-                  <div className="step_number"> Step 2 </div>
-                  <div className="step_text">Verify your Voter ID</div>
-                </div>
-                <div className="iconbox">
-                  <i className="bx bx-right-arrow-alt" />
-                  <span className="text">Show More</span>
-                </div>
-              </div>
-              <div className="card" onclick="popup_toggle()">
-                <div>
-                  <div className="step_number"> Step 3 </div>
-                  <div className="step_text">View the Candidate List</div>
-                </div>
-                <div className="iconbox">
-                  <i className="bx bx-right-arrow-alt" />
-                  <span className="text">Show More</span>
-                </div>
-              </div>
-              <div className="card" onclick="popup_toggle()">
-                <div>
-                  <div className="step_number"> Step 4 </div>
-                  <div className="step_text">Cast your Vote</div>
-                </div>
-                <div className="iconbox">
-                  <i className="bx bx-right-arrow-alt" />
-                  <span className="text">Show More</span>
-                </div>
-              </div>
+                {stepsCard}
             </div>
             {/* CARD ENDS */}
             {/* DETAILS */}
@@ -85,30 +91,7 @@ class User_Dashboard extends Component {
                     </tr>
                   </thead> 
                   <tbody>
-                    <tr>
-                      <td>Nov 2022</td>
-                      <td>State Legislative</td>
-                      <td>Himachal Pradesh</td>
-                      <td><span className="status_ongoing">Ongoing</span></td>
-                    </tr>
-                    <tr>
-                      <td>Dec 2022</td>
-                      <td>State Legislative</td>
-                      <td>Gujrat</td>
-                      <td><span className="status_offline">Offline</span></td>
-                    </tr>
-                    <tr>
-                      <td>TBD</td>
-                      <td>Legislative</td>
-                      <td>Gopalganj, Bhihar</td>
-                      <td><span className="status_offline">Offline</span></td>
-                    </tr>
-                    <tr>
-                      <td>14 Feb 2022</td>
-                      <td>State Legislative</td>
-                      <td>Uttarakhand</td>
-                      <td><span className="status_completed">Completed</span></td>
-                    </tr>
+                    {valueCard}
                   </tbody>
                 </table>
               </div>

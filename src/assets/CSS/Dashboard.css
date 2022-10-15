@@ -383,7 +383,7 @@ body{
     text-align: center;
   }
 
-  .status_ongoing{
+  .Ongoing{
     padding: 4px 4px;
     background: var(--green);
     color: var(--white);
@@ -391,14 +391,14 @@ body{
     cursor: pointer;
   }
 
-  .status_offline{
+  .Offline{
     padding: 4px 4px;
     background: var(--light_grey);
     color: var(--white);
     border-radius: 4px;
   }
 
-  .status_completed{
+  .Completed{
     padding: 4px 4px;
     background: var(--blue);
     color: var(--white);
