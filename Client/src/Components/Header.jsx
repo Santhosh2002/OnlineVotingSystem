@@ -14,18 +14,17 @@ class Header extends Component {
             navLinks.style.right = "-200px";
         }
     
-    return (<div className="header">
-          
+        return (<div className="header">
         <nav id="navbar">
-          <Link to ='Home' ><img src={logo} className="App-logo" alt="logo" /></Link>
-          <Link to ='Home' className="Company">Online Voting System</Link>
+          <a href="#first"><img src={logo} className="App-logo" alt="logo" /></a>
+          <a href="#first" className="Company">Online Voting System</a>
           <div className="nav-links" id="navLinks">
             <i className="fa-solid fa-rectangle-xmark" onClick={hideMenu} />
             <ul className="navbar-nav">
-              {/* <li><Link class="nav-links scroll" href="#first">HOME</Link></li> */}
-              <li><Link to ='Login' className="nav-links scroll" >LOGIN</Link></li>
-              <li><Link to ='About' className="nav-links scroll" >ABOUT US</Link></li>
-              <li><Link to ='Contact' className="nav-links scroll" >CONTACT</Link></li>
+              {/* <li><a class="nav-links scroll" href="#first">HOME</a></li> */}
+              <li><Link to ='Login' className="nav-links scroll">LOGIN</Link></li>
+              <li><a className="nav-links scroll" href="#about">ABOUT US</a></li>
+              <li><a className="nav-links scroll" href="#contact">CONTACT</a></li>
             </ul>
           </div>
           <i className="fa-solid fa-bars" onClick={showMenu}/>

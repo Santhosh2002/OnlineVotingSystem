@@ -23,7 +23,7 @@
     position: relative;
 }
 
-.Home {
+.Home_main {
     height: 80%;
     top: 122px;
     left: 60px;
@@ -35,14 +35,14 @@
     border-radius: 30px;
 }
 
-.Home h1 {
+.Home_main h1 {
     font-size: 40px;
     margin: 10px 0 30px;
     line-height: 80px;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-.Home p {
+.Home_main p {
     font-size: 21px;
     margin: 10px 0 30px;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -109,7 +109,7 @@ nav img {
     width: 100%;
 }
 
-.text-box {
+.Home_main .text-box {
     width: 90%;
     color: black;
     position: absolute;
@@ -120,14 +120,14 @@ nav img {
     text-align: center;
 }
 
-.text-box h1 {
+.Home_main .text-box h1 {
     font-size: 40px;
     margin: 10px 0 30px;
     line-height: 80px;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-.text-box p {
+.Home_main .text-box p {
     font-size: 21px;
     margin: 10px 0 30px;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;

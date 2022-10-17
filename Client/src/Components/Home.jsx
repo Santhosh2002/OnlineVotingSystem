@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Home extends Component { 
     render() { 
         return (
-        <div className="Home" id="home">
+        <div className="Home_main" id="home">
           <div className="text-box">
             <h1>Digital Indian's New Voting System </h1>
             <p>An Online Voting System to digitalize the Voting process while using the latest technology <br />to make the process more Secure, Transperant, Immutable and Reliable
