@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
 
 require('../db/conn');
 const User = require("../model/userSchema");
-
+const Admin = require("../model/adminSchema");
 router.post('/register',async (req, res) => {
     const { aadharnum } = req.body;
 
@@ -26,6 +26,30 @@ router.post('/register',async (req, res) => {
         if (userReg) {
             res.status(201).json({ message: "Authuntication Successeful" });
         }
+           
+    } catch (err) {
+        console.log(err);
+    }
+    
+});
+
+router.post('/adminlogin',async (req, res) => {
+
+    try {
+        const { username,password } = req.body;
+        
+        if (!username || !password) {
+        return res.status(422).json({ error: "Please fill empty Fields" });
+        }
+
+        const adminLogin = await Admin.findOne({ username: username });
+        console.log(adminLogin);
+        if (adminLogin) {
+             res.json({ message: "Admin Login Successfull" });
+        } else {
+             res.json({ message: "Admin Login UnSuccessfull" });
+        }
+       
            
     } catch (err) {
         console.log(err);

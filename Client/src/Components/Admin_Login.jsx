@@ -1,9 +1,37 @@
-import React, { Component } from 'react';
+import Popup from './Popup';
+import { Link , useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
 
-class Admin_Login extends Component {
+const Admin_Login = () => {
+            
+  const [username, setUsername] = useState('');  
+  const [password, setPassword] = useState('');  
+  
+  const loginAdmin = async (e) => {
+    e.preventDefault();
 
-    render() { 
-        return (<div>
+    const res = await fetch('/adminlogin',{
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username,
+        password
+      })
+    });
+    const data = await res.json();
+
+    if (data.status === 400 || !data) {
+      window.alert("Invalid Login");
+      console.log("Invlid Login");
+    } else {
+      window.alert("Login successfull");
+      console.log("Login successfull");
+      // navigate("/OTP_Confirm");
+    }
+  }
+    return (<div>
         <div className="header">
           <nav>
             <a href="index.html"><img src="Images/Logo 2.png" /></a>
@@ -22,24 +50,24 @@ class Admin_Login extends Component {
         <div className="Home">
           <div className="text-box">
             <div className="signin-signup">
-              <form action="#" className="sign-in-form">
+              <form method="POST" action="#" className="sign-in-form">
                 <i className="fa-solid fa-circle-user" />
                 <h2 className="title">Admin</h2>  
                 <div className="input-field">
                   <i className="fas fa-user" /> 
-                  <input type="email" placeholder="Username" id="username" />
+                  <input type="email" value = {username} onChange={(e)=>setUsername(e.target.value)} placeholder="Username" id="username" />
                 </div>  
                 <div className="input-field">
                   <i className="fas fa-lock" />
-                  <input type="password" placeholder="Password" id="password" />
+                  <input type="password" value = {password} onChange={(e)=>setPassword(e.target.value)} placeholder="Password" id="password" />
                 </div>
-                <input type="button" id="Login" className="btn solid" defaultValue="Login" />
+                <input type="button" id="Login" className="btn solid" defaultValue="Login" onClick={loginAdmin} />
               </form>
             </div>
           </div>
         </div>
       </div>);
     }
-}
+
  
 export default Admin_Login;
