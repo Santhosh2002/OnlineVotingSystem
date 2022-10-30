@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --orange: #ff9c2c;
+    --white: #fff;
+    --blue: #4590b1;
+    --dark_orange: #bf6f13;
+    --grey: #333;
+    --green: #18b60d;
+    --light_grey: rgb(144, 143, 143);
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+}
+/* MAIN */
+
+#Cand {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--white);
+    transition: all 0.5s ease;
+}
+
+#Cand.active {
+    width: calc(100% - 80px);
+    left: 80px;
+}
+
+
+
+#Cand #title {
+    font-size: 40px;
+    margin-bottom: 20px;
+    margin-bottom: 10px;
+
+}
+
+#Cand .text-box {
+    text-align: center;
+}
+
+#Cand .text-box .Res {
+    position: relative;
+    width: 88%;
+    padding: 20px;
+    /* display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 80px; */
+    display: flex;
+    flex-direction: row;
+    margin-left: 2%;
+
+}
+
+#Cand .candidates .card {
+    position: relative;
+    background: var(--white);
+    width: 300px;
+    height: 300px;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 60px;
+}
+
+#Cand .candidates_details .card {
+    position: relative;
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+    height: 300px;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 50px;
+    margin-bottom: 60px;
+}
+#Cand .candidates_details .card p {
+    font-size: 16px;
+    margin-left: 25px;
+    text-align: center;
+
+}
+#Cand .candidates_details .card p {
+    font-size: 16px;
+    margin-left: 25px;
+    text-align:start;
+
+}
+#Cand .candidates_details .card h1 {
+    font-size: 24px;
+    text-align: justify;
+
+}
+#Cand .candidates_details .card #Qualif {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+#Cand .candidates_details .card #Qualit {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+#Cand .imgBox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-80px);
+    z-index: 99;
+}
+
+#Cand .imgBox img {
+    width: 150px;
+    height: 150px;
+    margin-left: 10%;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+}
+

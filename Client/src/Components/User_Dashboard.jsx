@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+
 import Topbar from './Top_bar';
-class User_Dashboard extends Component {
-  render() { 
+
+const User_Dashboard =()=> {
+  
     var Data = [
       { Date: 'Nov 2022',
         Type: 'State Legislative',
@@ -24,7 +25,24 @@ class User_Dashboard extends Component {
         Status: 'Completed'
       },
     ];
-    
+    var message = [
+      {
+        Step: 'Step1',
+        Message: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis non asperiores nihil, libero, quod error fugiat animi alias accusantium quaerat assumenda eveniet ipsum distinctio nemo unde illo laudantium molestiae qui eos minima debitis nostrum maxime ullam est? Porro, eveniet cupiditate.'
+      },
+      {
+        Step: 'Step2',
+        Message: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis non asperiores nihil, libero, quod error fugiat animi alias accusantium quaerat assumenda eveniet ipsum distinctio nemo unde illo laudantium molestiae qui eos minima debitis nostrum maxime ullam est? Porro, eveniet cupiditate.'
+      },
+      {
+        Step: 'Step3',
+        Message: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis non asperiores nihil, libero, quod error fugiat animi alias accusantium quaerat assumenda eveniet ipsum distinctio nemo unde illo laudantium molestiae qui eos minima debitis nostrum maxime ullam est? Porro, eveniet cupiditate.'
+      },
+      {
+        Step: 'Step4',
+        Message: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis non asperiores nihil, libero, quod error fugiat animi alias accusantium quaerat assumenda eveniet ipsum distinctio nemo unde illo laudantium molestiae qui eos minima debitis nostrum maxime ullam est? Porro, eveniet cupiditate.'
+      }
+    ]
       var valueCard = Data.map(function (value) {
           return <tr>
                     <td>{value.Date}</td>
@@ -52,7 +70,7 @@ class User_Dashboard extends Component {
         Process: 'Cast your Vote'
       }];
     var stepsCard = steps.map(function (value) {
-      return  <div className="card" onClick="popup_toggle()">
+      return  <div className="card">
                 <div>
                   <div className="step_number"> {value.Step} </div>
                   <div className="step_text">{value.Process}</div>
@@ -63,7 +81,22 @@ class User_Dashboard extends Component {
                 </div>
               </div>
     })
-        return (<div>
+    var popup = message.map(function (value) {
+      return <div id="popup" className={value.Step}>
+          <div className="popup_icon">
+            <i className="bx bx-detail" />
+          </div>
+          <div className="popup_content">
+          <h2>{value.Step}</h2>
+          <div className="popup_text">{value.Message}</div>
+          </div>
+          <div className="dismiss">
+            <button className="dismiss_btn">Dismiss</button>
+          </div>
+        </div>
+    })
+  return (<>
+          
         <div className="container" id="blur">
           
           {/* MAIN STARTS*/}
@@ -95,12 +128,13 @@ class User_Dashboard extends Component {
                   </tbody>
                 </table>
               </div>
-              <div className="recent_news">
+              {/* <div className="recent_news">
                 <div className="cardheader">
                   <h2>Recent News</h2>
                 </div>
                 <table>
-                  <tbody><tr>
+                    <tbody>
+                    <tr>
                       <td width="60px">
                         <div className="imgbox">
                           <img src="Images/HT_logo.jpg" alt="" />
@@ -133,80 +167,17 @@ class User_Dashboard extends Component {
                           <span><a target="_blank" href="https://www.business-standard.com/article/current-affairs/ec-team-visits-gujarat-ahead-of-polls-reviews-election-preparedness-122091900048_1.html">Know more</a></span></h4></td>
                     </tr>
                   </tbody></table>
-              </div>
+              </div> */}
             </div>
           </div>  
-          <div className="main" id="Auth" style={{display: 'none'}}>
-            {/* TOPBAR */}
-            <div className="topbar">
-              {/* TOGGLE BUTTON STARTS*/}
-              <div className="toggle">
-                <i className="bx bx-menu" />
-                <div className="dashboard">Authenticate</div>
-              </div>
-              {/* TOGGLE BUTTON ENDS */}
-              {/* PTOFILE STARTS */}
-              <div className="user">
-                <img src="profile.jpg" alt="" className />
-                <span className="profile_name">Profile</span>
-                <i className="bx bx-chevron-down" />
-              </div>
-              {/* PROFILE ENDS */}
-            </div>
-            {/* TOPBAR ENDS */}
-            {/* FORMS STARTS */}
-            <div className="Home">
-              <div className="text-box">
-                <div className="signin-signup">
-                  <form action="#" className="sign-in-form">
-                    <i className="bx bxs-id-card" />
-                    <h2 className="title">Verfication</h2>  
-                    <div className="input-field">
-                      <i className="bx bxs-user" />
-                      <input type="text" placeholder="Voter ID" />
-                    </div>  
-                    <div className="input-field">
-                      <i className="bx bxs-lock-alt" />
-                      <input type="captha" placeholder="CAPTCHA" />
-                    </div>
-                    {/* CAPTCHA BOX STARTS */}
-                    {/* CAPTCHA BOX ENDS */}
-                    <input type="submit" id="Login" className="btn solid" defaultValue="Verify" />
-                  </form>
-                </div>
-              </div>
-            </div>
-            {/* FORM ENDS */}
-          </div>
+
         </div>
-        {/* POPSP STARTS */}
-        <div id="popup">
-          <div className="popup_icon">
-            <i className="bx bx-detail" />
-          </div>
-          <div className="popup_content">
-            <h2>Step 1</h2>
-            <div className="popup_text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium nostrum provident sapiente placeat velit similique id perspiciatis suscipit, tenetur ex in, assumenda explicabo quos autem tempora maiores!</div>
-          </div>
-          <div className="dismiss" onclick="popup_toggle()">
-            <button className="dismiss_btn">Dismiss</button>
-          </div>
-        </div>
-        <div id="popup">
-          <div className="popup_icon">
-            <i className="bx bx-detail" />
-          </div>
-          <h2>Step 2</h2>
-          <div className="popup_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis non asperiores nihil, libero, quod error fugiat animi alias accusantium quaerat assumenda eveniet ipsum distinctio nemo unde illo laudantium molestiae qui eos minima debitis nostrum maxime ullam est? Porro, eveniet cupiditate.</div>
-          <div className="dismiss" onclick="popup_toggle()">
-            <button className="dismiss_btn">Dismiss</button>
-          </div>
-        </div>
-        <div id="overlay" onclick="popup_toggle()" />
+        {popup}
+        <div id="overlay" />
         {/* POPUP ENDS */} 
         {/* SCRIPT */}
-      </div>);
+  </>);
+  
     }
-}
  
 export default User_Dashboard;

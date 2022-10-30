@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+:root {
+    --orange: #ff9c2c;
+    --white: #fff;
+    --blue: #4590b1;
+    --dark_orange: #bf6f13;
+    --grey: #333;
+    --green: #18b60d;
+    --light_grey: rgb(144, 143, 143);
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+}
+
+
+#Election_P {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--white);
+    transition: all 0.5s ease;
+}
+
+#Election_P.active {
+    width: calc(100% - 80px);
+    left: 80px;
+}
+#Election_P .details1 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+}
+
+#Election_P .main_header table {
+    color: #333;
+    font-weight: 600;
+    font-size: 2em;
+    border-collapse: separate;
+    border-spacing: 10px;
+    margin: 20px 50px 0 0;
+
+}
+
+#Election_P .main_header table td {
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.07);
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 3px;
+    word-break: break-all;
+}
+
+
+#Election_P .tab {
+    width: 95%;
+    position: relative;
+    background: rgba(255, 255, 255, 0.809);
+    margin-bottom: 15px;
+    margin-left: 20px;
+    border-radius: 8px;
+    padding: 0 20px 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+
+}
+
+#Election_P .tab input {
+    appearance: none;
+
+}
+
+#Election_P .tab label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+#Election_P .tab label::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    font-size: 2em;
+    color: rgba(0, 0, 0, 0.1);
+    transition: transform 1s;
+}
+
+#Election_P .tab:hover label::after {
+    color: #333;
+}
+
+#Election_P .tab input:checked~label::after {
+    transform: rotate(135deg);
+    color: #fff;
+}
+
+#Election_P .tab table {
+    font-weight: 500;
+    font-size: 1em;
+    border-collapse: separate;
+    border-spacing: 10px;
+   
+    z-index: 10;
+}
+
+
+#Election_P .tab table td {
+    padding: 4px;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 30px;
+    word-break: break-word;
+}
+
+#Election_P .tab table.Ongoing td {
+    background: linear-gradient(135deg, #70f570, #49c628);
+}
+
+#Election_P .tab table.Offline td {
+    background: linear-gradient(135deg, #969696, #606060);
+}
+
+#Election_P .tab table.Ended td {
+    background: linear-gradient(135deg, #3c8ce7, #03eaff);
+}
+
+#Election_P .tab input:checked~label table td {
+    color: #333;
+    background: #fff;
+}
+
+#Election_P .tab input:checked~label h2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 8em;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+#Election_P .tab label.Ongoing h2 {
+    background: linear-gradient(135deg, #70f570, #49c628);
+}
+
+#Election_P .tab label.Ended h2 {
+    background: linear-gradient(135deg, #3c8ce7, #03eaff);
+}
+
+#Election_P .tab label.Offline h2 {
+    background: linear-gradient(135deg, #b1b1b1, #727272);
+}
+
+
+#Election_P .tab label h3 {
+    position: relative;
+    font-weight: 500;
+    color: #333;
+    /* FOR WHAT ? */
+    z-index: 10;
+}
+
+#Election_P .tab input:checked~label h3 {
+    background: #fff;
+    padding: 2px 10px;
+    color: #333;
+    border-radius: 2px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+#Election_P .tab .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: 2.5s;
+
+}
+
+#Election_P .tab input:checked~.content {
+    max-height: 100vh;
+}
+
+#Election_P .tab .content p {
+    position: relative;
+    padding: 10px 0;
+    color: #333;
+    /* Again why??? */
+    z-index: 10;
+}
+
+#Election_P .tab input:checked~.content p {
+    color: #fff;
+}

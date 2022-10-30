@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-
+import Dashboard_fun from './Dashboard_fun';
 function topbar(props) {
     return (
         
-            <div className="topbar">
+            <div className="topbar"onLoad={Dashboard_fun}>
               {/* TOGGLE BUTTON STARTS*/}
               <div className="toggle">
                 <i className="bx bx-menu" />

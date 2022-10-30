@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
+import logo from '../assets/images/Logo 2.png'
+import { Link , useNavigate } from 'react-router-dom';
+import OTP from './OTP';
+const OTP_Confirmation = () => {
+const navigate = useNavigate();
+    const Login = async (e) => {
+    e.preventDefault();
+      navigate("/UserDashboard");
 
-class OTP_Confirmation extends Component {
-    render() { 
-        return (
+    }
+  return (
     <div>
-        <div className="header">
+        <div className="header" id='OTP' >
           <nav>
-            <a href="index.html"><img src="Images/Logo 2.png" /></a>
+            <a href="index.html"><img src={logo} /></a>
             <a href="index.html" className="Company">Online Voting System</a>
             <div className="alertPopup">
               <div className="alert" id="A1">
@@ -17,8 +24,7 @@ class OTP_Confirmation extends Component {
               </div>
             </div>
           </nav></div>
-        <div className="Home">
-          <div className="text-box">
+        <div className="Home" id='OTP_P'>
             <div className="signin-signup">
               <form action="#" className="sign-in-form">
                 <i className="fa-solid fa-circle-user" />
@@ -36,14 +42,13 @@ class OTP_Confirmation extends Component {
                 <div className="timer">
                   <p>Resend</p> <span id="timer" />
                 </div>
-                <input type="button" id="Submit" className="btn solid" defaultValue="Submit" />
+                <input type="button" id="Submit" className="btn solid" defaultValue="Submit" onClick={Login} />
               </form>
             </div>
           </div>
         </div>
-    </div>
         );
     }
-}
+
  
 export default OTP_Confirmation;

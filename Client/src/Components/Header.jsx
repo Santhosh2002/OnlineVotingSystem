@@ -14,7 +14,8 @@ class Header extends Component {
             navLinks.style.right = "-200px";
         }
     
-        return (<div className="header">
+    return (
+      <div className="header" id="homeHeader">
         <nav id="navbar">
           <a href="#first"><img src={logo} className="App-logo" alt="logo" /></a>
           <a href="#first" className="Company">Online Voting System</a>

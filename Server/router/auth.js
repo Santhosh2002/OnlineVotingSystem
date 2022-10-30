@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
+const bcrypt = require('bcryptjs');
 router.get('/', (req, res) => {
     res.send('Hello');
 });
@@ -8,10 +8,13 @@ router.get('/', (req, res) => {
 require('../db/conn');
 const User = require("../model/userSchema");
 const Admin = require("../model/adminSchema");
-router.post('/register',async (req, res) => {
-    const { aadharnum } = req.body;
+const Election = require("../model/electionSchema");
 
-    if (!aadharnum) {
+
+router.post('/register',async (req, res) => {
+    const { aadharnum,mobilenum } = req.body;
+
+    if (!aadharnum||!mobilenum) {
         return res.status(422).json({ error: "Please fill empty Fields" });
     }
     try {
@@ -19,14 +22,12 @@ router.post('/register',async (req, res) => {
         if (userExist) {
             return res.status(422).json({ error: "Aadhar Aleary Exists" });
         }
-        const user = new User({ aadharnum })
+        const user = new User({ aadharnum,mobilenum })
         
-        const userReg = await user.save();
- 
-        if (userReg) {
-            res.status(201).json({ message: "Authuntication Successeful" });
-        }
-           
+        await user.save();
+
+        res.status(201).json({ message: "Authuntication Successefull" });
+
     } catch (err) {
         console.log(err);
     }

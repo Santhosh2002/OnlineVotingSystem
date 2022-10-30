@@ -23,130 +23,9 @@ body{
 
 }
 
-.container{
-   position: relative;
-   width: 100%;
-   
-
-}
-
-.navigation{
-    position: fixed;
-    width: 300px;
-    height: 100%;
-    background: var(--orange);
-    border-left: 10px solid var(--orange);
-    transition: all 0.5s ease;
-    overflow: hidden;
-    
-}
-.navigation a img{
-    height: 60px;
-    width: 60px;
-}
-
-.navigation.active{
-    width: 80px;
-    
-}
-
-.navigation ul{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
-
-.navigation ul li{
-    position: relative;
-    width: 100%;
-    list-style: none;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-   
-}
-
-.navigation ul li:hover,
-.navigation ul li.hovered{
-    background: var(--white);
-}
-
-.navigation ul li:nth-child(1){
-    margin-bottom: 40px;
-    pointer-events: none;
-
-}
-
-.navigation ul li a{
-    position: relative;
-    display: block;
-    width: 100%;
-    display: flex;
-    text-decoration: none;
-    color: var(--white);
-}
-
-.navigation ul li:hover a,
-.navigation ul li.hovered a{
-    color: var(--orange);
-}
-
-.navigation ul li a i{
-    position: relative;
-    display: block;
-    min-width: 60px;
-    height: 60px;
-    line-height: 60px;
-    text-align: center;
-}
-
-.navigation ul li a i{
-    font-size: 1.75rem;
-}
-
-.navigation ul li a .Title{
-    position: relative;
-    display: block;
-    padding: 0 10px;
-    height: 60px;
-    line-height: 60px;
-    text-align: start;
-    white-space: nowrap;
-}
-
-/* outside curve */
-
-.navigation ul li:hover a::before,
-.navigation ul li.hovered a::before{
-    content: '';
-    position: absolute;
-    right: 0;
-    top: -50px;
-    width: 50px;
-    height: 50px;
-    background: transparent;
-    border-radius: 50%;
-    box-shadow: 35px 35px 0 10px var(--white);
-    pointer-events: none;
-}
-
-.navigation ul li:hover a::after,
-.navigation ul li.hovered a::after{
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: -50px;
-    width: 50px;
-    height: 50px;
-    background: transparent;
-    border-radius: 50%;
-    box-shadow: 35px -35px 0 10px var(--white);
-    pointer-events: none;
-}
 
 /* MAIN */
-
-.main{
+#blur2 {
     position: absolute;
     width: calc(100% - 300px);
     left: 300px;
@@ -155,81 +34,15 @@ body{
     transition: all 0.5s ease;
 }
 
-.main.active{
+#blur2.active{
     width: calc(100% - 80px);
     left: 80px;
 }
 
-.topbar{
-    width: 100%;
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
-    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-    
-}
-
-.toggle {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    font-weight: 500;
-    color: var(--grey);
-}
-
-.toggle i{
-    font-size: 35px;
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-.toggle .dashboard{
-    font-size: 35px;
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-.user{
-    display: flex;
-    align-items: center;
-    height: 50px;
-    min-width: 160px;
-    background: #f5f6fa;
-    border: 2px solid #efeef1;
-    border-radius: 6px;
-    padding: 0 15px 0 2px;
-  }
-  
-  .user img{
-    height: 40px;
-    width: 40px;
-    object-fit: cover;
-    border-radius: 6px;
-    margin-left: 4px;
-  }
-  
-  .user .profile_name{
-    font-size: 17px;
-    font-weight: 500;
-    color: #333;
-    margin: 0 10px;
-    white-space: nowrap;
-  }
-  
-  .user i{
-    color: #333;
-    font-size: 30px;
-  }
-
-
 
   /* CARDS */
 
-  .cardbox{
+#blur2 .cardbox{
    position: relative;
    width: 100%;
    padding: 20px;
@@ -238,7 +51,7 @@ body{
    grid-gap: 30px;
   }
 
-  .cardbox .card{
+#blur2 .cardbox .card{
     position: relative;
     background: var(--white);
     padding: 30px;
@@ -251,7 +64,7 @@ body{
     cursor: pointer;
   }
 
-  .cardbox .card .step_number{
+#blur2 .cardbox .card .step_number{
     color: var(--dark_orange);
     font-size: 1.1rem;
     font-weight: 500;
@@ -259,20 +72,20 @@ body{
 
   }
 
-  .cardbox .card .step_text{
+#blur2 .cardbox .card .step_text{
     position: relative;
     font-weight: 500;
     font-size: 1.75rem;
     color: var(--orange);
   }
 
-  .cardbox .card .iconbox{
+#blur2 .cardbox .card .iconbox{
    font-size: 1rem;
    color: rgb(152, 152, 152);
    
   }
 
-  .cardbox .card .iconbox i{
+#blur2 .cardbox .card .iconbox i{
     height: 20px;
     width: 20px;
     background: var(--orange);
@@ -284,17 +97,17 @@ body{
     margin-right: 5px;
   }
 
-  .cardbox .card:hover{
+#blur2 .cardbox .card:hover{
     background-color: var(--orange);
   }
 
-  .cardbox .card:hover .step_text,
-  .cardbox .card:hover .iconbox,
-  .cardbox .card:hover .step_number{
+#blur2 .cardbox .card:hover .step_text,
+#blur2 .cardbox .card:hover .iconbox,
+#blur2 .cardbox .card:hover .step_number{
     color: var(--white);
   }
 
-  .cardbox .card:hover .iconbox i{
+#blur2 .cardbox .card:hover .iconbox i{
     background: var(--white);
     color: var(--orange);
   }
@@ -302,7 +115,7 @@ body{
 
   /* DEATILS */
 
-  .details{
+#blur2 .details{
     position: relative;
     width: 100%;
     padding: 20px;
@@ -312,7 +125,7 @@ body{
     margin-top: 10px;
   }
 
-  .details .upcoming_elections{
+#blur2 .details .upcoming_elections{
     position: relative;
     display: grid;
     min-height: 260px;
@@ -323,18 +136,18 @@ body{
 
   }
 
-  .cardheader{
+#blur2 .cardheader{
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
   }
 
-  .cardheader h2{
+#blur2 .cardheader h2{
     font-weight: 600;
     color: var(--orange);
   }
 
-  .btn{
+#blur2 .btn{
     position: relative;
     padding: 5px 10px;
     background: var(--orange);
@@ -343,47 +156,47 @@ body{
     border-radius: 6px;
   }
 
-  .btn:hover{
+#blur2 .btn:hover{
     box-shadow: 0 0 7px 2.5px rgba(0, 0, 0, 0.1);
   }
 
-  .details table{
+#blur2 .details table{
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
     
   }
 
-  .details table thead td{
+#blur2 .details table thead td{
     font-weight: 600;
   }
 
-  .details .upcoming_elections table tr{
+#blur2 .details .upcoming_elections table tr{
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   } 
 
-  .details .upcoming_elections table tbody tr:hover{
+#blur2 .details .upcoming_elections table tbody tr:hover{
     background: var(--orange);
     color: var(--white);
   }
 
-  .details .upcoming_elections table tr td{
+#blur2 .details .upcoming_elections table tr td{
     padding: 10px;
   }
 
-  .details .upcoming_elections table tr td:nth-child(2){
+#blur2 .details .upcoming_elections table tr td:nth-child(2){
     text-align: center;
   }
 
-  .details .upcoming_elections table tr td:nth-child(3){
+#blur2 .details .upcoming_elections table tr td:nth-child(3){
     text-align: center;
   }
 
-  .details .upcoming_elections table tr td:nth-child(4){
+#blur2 .details .upcoming_elections table tr td:nth-child(4){
     text-align: center;
   }
 
-  .Ongoing{
+#blur2 .Ongoing{
     padding: 4px 4px;
     background: var(--green);
     color: var(--white);
@@ -391,32 +204,32 @@ body{
     cursor: pointer;
   }
 
-  .Offline{
+#blur2 .Offline{
     padding: 4px 4px;
     background: var(--light_grey);
     color: var(--white);
     border-radius: 4px;
   }
 
-  .Completed{
+#blur2 .Completed{
     padding: 4px 4px;
     background: var(--blue);
     color: var(--white);
     border-radius: 4px;
   }
 
-  .details .upcoming_elections table tbody tr:hover .status_ongoing{
+#blur2 .details .upcoming_elections table tbody tr:hover .status_ongoing{
     background: var(--white);
     color: var(--orange);
   }
 
-  .details .upcoming_elections table tbody tr:hover .status_offline,
-  .details .upcoming_elections table tbody tr:hover .status_completed{
+#blur2 .details .upcoming_elections table tbody tr:hover .status_offline,
+#blur2 .details .upcoming_elections table tbody tr:hover .status_completed{
     background: var(--dark_orange);
     color: var(--white);
   }
 
-  .recent_news{
+#blur2 .recent_news{
     position: realative;
     display: grid;
     min-height: 260px;
@@ -426,7 +239,7 @@ body{
     border-radius: 20px;
   }
 
-  .recent_news .imgbox{
+#blur2 .recent_news .imgbox{
     position: relative;
     width: 40px;
     height: 40px;
@@ -435,7 +248,7 @@ body{
     overflow: hidden;
   }
 
-  .recent_news .imgbox img{
+#blur2  .recent_news .imgbox img{
     position: absolute;
     top: 0;
     left: 0;
@@ -443,214 +256,100 @@ body{
     object-fit: cover;
   }
 
-  .recent_news table tr td {
+#blur2 .recent_news table tr td {
     padding: 12px 10px;
     cursor: pointer;
   }
 
-  .recent_news table tr td h4{
+#blur2 .recent_news table tr td h4{
     font-size: 16px;
     font-weight: 500; 
     line-height: 1.2em;
   }
 
-  .recent_news table tr td h4 span{
+#blur2 .recent_news table tr td h4 span{
     font-size: 14px;
     font-weight: 300;
     color: var(--grey);
   }
 
-  .recent_news table tr td h4 span a{
+#blur2 .recent_news table tr td h4 span a{
     text-decoration: none;
     color: var(--grey);
   }
 
-  .recent_news table tr td h4 span a:visited{
+#blur2 .recent_news table tr td h4 span a:visited{
     text-decoration: none;
     color: var(--dark_orange);
   }
 
-  .recent_news table tr:hover{
+#blur2 .recent_news table tr:hover{
     background: var(--orange);
     color: var(--white);
   }
 
-  .recent_news table tr:hover h4 span{
+#blur2 .recent_news table tr:hover h4 span{
     color: var(--white);
   }
 
-  .recent_news table tr:hover h4 span a,
-  .recent_news table tr:hover h4 span a:visited{
+#blur2 .recent_news table tr:hover h4 span a,
+#blur2 .recent_news table tr:hover h4 span a:visited{
     text-decoration: none;
     color: var(--white);
   }
 
-  .Home{
-    position: relative;
-    width: 100%;
-    padding: 20px;
-    margin-top: 10px;
-    height: 100%;
-    width: calc(100% - 50px);
-    left: 30px;
-    right: 20px;
-    
-  }
-
-  .Home .text-box{
-    position: relative;
-    min-height: 600px;
-    background: var(--white);
-    padding: 20px;
-    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-    border-radius: 20px;
-  }
-
-  .Home .text-box .signin-signup{
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    min-height: 600px;
-  }
-
-  form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    grid-column: 1/2;
-    grid-row: 1/2;
-  }
-
-  .sign-in-form{
-    min-height: 600px;
-  }
-
-  .sign-in-form i{
-    text-align: center;
-    line-height: 60px;
-    color: #ff9c2c;
-    font-size: 60px;
-  } 
-
-
-  .title{
-    font-size: 2.2rem;
-    color: #444;
-    margin-bottom: 10px;
-  }
-  
-  .input-field {
-    max-width: 400px;
-    width: 100%;
-    height: 60px;
-    background-color: #f0f0f0;
-    margin: 10px 0;
-    border-radius: 60px;
-    display: grid;
-    grid-template-columns: 15% 85%;
-    padding: 0 0.4rem;
-    position: relative;
-  }
-  
-  .input-field i{
-    text-align: center;
-    line-height: 60px;
-    color: #ff9c2c;
-    font-size: 2rem;
-  }
-  
-  .input-field input{
-    background: none;
-    outline: none;
-    border: none;
-    line-height: 1;
-    font-weight: 600;
-    font-size: 1.26rem;
-  }
-  
-  .input-field input:placeholder-shown {
-    color: #aaa;
-    font-weight: 500;
-  }
-  
-  #Login {
-    width: 150px;
-    height: 49px;
-    top: 40%;
-    outline: none;
-    border: none;
-    border-radius: 48px;
-    background-color: #4590b1;
-    color: white;
-    font-size: 1.3rem;
-    font-weight: 600;
-    display: inline-block;
-    flex-direction: row;
-    margin: 10px 0;
-    margin-top: 15px;
-    transition: all 0.5s;
-    cursor: pointer;
-  }
-  
-  #Login:hover{
-    background-color: #138808;
-  }
-
-
-
   /* RESPONSIVE */
   @media (max-width: 991px){
-    .navigation{
+.navigation{
         left: -300px;
     }
-    .navigation.active{
+.navigation.active{
         left: 0px;
         width: 300px;
     }
-    .main{
+.main{
         width: 100%;
         left: 0;
     }
-    .main.active{
+.main.active{
         left: 300px;
     }
-    .cardbox{
+.cardbox{
         grid-template-columns: repeat(2, 1fr);
     }
   }
 
   @media (max-width: 768px){
-    .details{
+ .details{
         grid-template-columns: repeat(1, 1fr);
     }
 
-    .upcoming_elections{
+.upcoming_elections{
         overflow-x: auto;
     }
   }
 
   @media (max-width: 600px){
-    .cardbox{
+.cardbox{
         grid-template-columns: repeat(1, 1fr);
     }
-    .cardbox .card{
+.cardbox .card{
         justify-content: left;
     }
-    .navigation{
+.navigation{
         width: 100%;
         left: -100%;
         z-index: 1000;
     }
-    .navigation.active{
+.navigation.active{
         width: 100%;
         left: 0;
     }
-    .toggle i{
+.toggle i{
         z-index: 10001;
     }
 
-    .main.active .toggle i{
+.main.active .toggle i{
         position: fixed;
         right: 0;
         left: initial;
@@ -663,7 +362,7 @@ body{
 
 
   /* TRIAL */
-  .container#blur.popup_active{
+#blur2 .container .popup_active{
     opacity: 0.1;
     pointer-events: none;
   }

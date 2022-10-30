@@ -1,3 +1,4 @@
+import logo from '../assets/images/Logo 2.png';
 import Popup from './Popup';
 import { Link , useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
@@ -32,23 +33,22 @@ const Admin_Login = () => {
     }
   }
     return (<div>
-        <div className="header">
+        <div className="header" id='Admin'>
           <nav>
-            <a href="index.html"><img src="Images/Logo 2.png" /></a>
+            <a href="#first"><img src={logo} className="App-logo" alt="logo" /></a>
             <a href="index.html" className="Company">Online Voting System</a>
-            <Popup type = 'Voter Number' />
+            <Popup type = 'Username or Password' />
             <div className="nav-links" id="navLinks">
               <i className="fa-solid fa-rectangle-xmark" onclick="hideMenu()" />
               <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="login.html">VOTER LOGIN</a></li>
+                <li><Link to ='/' >HOME</Link></li>
+                <li><Link to ='/Login'>VOTERS LOGIN</Link></li>
               </ul>
             </div>
             <i className="fa-solid fa-bars" onclick="showMenu()" />
           </nav>
         </div>
-        <div className="Home">
-          <div className="text-box">
+        <div className="Home" id='Admin_P'>
             <div className="signin-signup">
               <form method="POST" action="#" className="sign-in-form">
                 <i className="fa-solid fa-circle-user" />
@@ -66,7 +66,7 @@ const Admin_Login = () => {
             </div>
           </div>
         </div>
-      </div>);
+      );
     }
 
  

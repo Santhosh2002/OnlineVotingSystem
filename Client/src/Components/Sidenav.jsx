@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 class SideNav extends Component {
     state = {  } 
@@ -7,52 +8,52 @@ class SideNav extends Component {
         <div className="navigation">
         <ul>
           <li>
-            <a href="#">
+            <Link to ='/UserDashboard'>
               <img src="Plugin icon - 1.png" alt="" />
               <span className="Title">Online Voting System</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#" onclick="openTab('blur2');">
+            <Link to ='/UserDashboard'>
               <i className="bx bx-grid-alt" />
-              <span className="Title">Dashborad</span>
-            </a>
+              <span className="Title">Dashboard</span>
+            </Link>
           </li>
           <li>
-            <a href="#" onclick="openTab('Auth');">
+            <Link to ='/Authentication'>
               <i className="bx bx-id-card" />
               <span className="Title">Authentication</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#">
+            <Link to ='/ElectionList'>
               <i className="bx bx-list-ul" />
               <span className="Title">Election List</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#">
+            <Link to ='/CandidateList'>
               <i className="bx bx-trophy" />
               <span className="Title">Nomines List</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#">
+            <Link to ='/Polling'>
               <i className="bx bx-trophy" />
               <span className="Title">Polling</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#">
+            <Link to ='/Polling'>
               <i className="bx bx-trophy" />
               <span className="Title">Results</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="login.html">
+            <Link to ='/Login'>
               <i className="bx bx-log-out" />
               <span className="Title">Logout</span>
-            </a>
+            </Link>
           </li>
         </ul>
         </div>

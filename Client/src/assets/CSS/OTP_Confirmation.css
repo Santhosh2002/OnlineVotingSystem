@@ -7,29 +7,29 @@
 body{
   width: 100%;
 }
-.Home {
+#OTP_P {
   height: 80%;
   top: 122px;
   left: 60px;
   right: 60px;
-  background: url(Images/Background.png) no-repeat center fixed;
+  background: url(../images/Background.png) no-repeat center fixed;
   background-size: cover;
   background-color: rgba(199, 199, 199, 0.5);
   position: absolute;
   border-radius: 30px;
 }
-.header h1 {
+#OTP h1 {
   font-size: 40px;
   margin: 10px 0 30px;
   line-height: 80px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
-.header p {
+#OTP p {
   font-size: 21px;
   margin: 10px 0 30px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
-.Company {
+#OTP .Company {
   color: black;
   text-decoration: none;
   margin-left: 10px;
@@ -39,7 +39,7 @@ body{
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-nav {
+#OTP nav {
   display: flex;
   padding: 2% 1%;
   align-items: center;
@@ -50,18 +50,18 @@ nav {
   height: 20px;
 
 }
-nav img {
+#OTP nav img {
   width: 60px;
   border-radius: 8px;
 }
 
-.nav-links {
+#OTP .nav-links {
   flex: 1;
   text-align: right;
   margin-right: 20px;
 }
 
-.nav-links ul li {
+#OTP .nav-links ul li {
   list-style: none;
   display: inline-block;
 
@@ -69,7 +69,7 @@ nav img {
   position: relative;
 }
 
-.nav-links ul li a {
+#OTP .nav-links ul li a {
   color: #fff;
   text-decoration: none;
   font-size: 17.5px;
@@ -77,7 +77,7 @@ nav img {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-.nav-links ul li::after {
+#OTP .nav-links ul li::after {
   content: "";
   width: 0%;
   height: 2px;
@@ -86,10 +86,10 @@ nav img {
   margin: auto;
   transition: 0.5s;
 }
-.nav-links ul li:hover::after {
+#OTP .nav-links ul li:hover::after {
   width: 100%;
 }
-.text-box {
+#OTP_P .text-box {
   width: 90%;
   color: black;
   position: absolute;
@@ -99,13 +99,13 @@ nav img {
   transform: translate(-50%, -50%);
   text-align: center;
 }
-.text-box h1 {
+#OTP_P .text-box h1 {
   font-size: 40px;
   margin: 10px 0 30px;
   line-height: 80px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
-.text-box p {
+#OTP_P .text-box p {
   font-size: 21px;
   margin: 10px 0 30px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -119,10 +119,10 @@ div .fa-solid{
   font-size: 60px;
 }
 @media (max-width: 700px) {
-  .text-box h1 {
+  #OTP_P .text-box h1 {
     font-size: 30px;
   }
-  .text-box p {
+  #OTP_P .text-box p {
     font-size: 18px;
   }
   .nav-links ul li {
@@ -159,7 +159,7 @@ div .fa-solid{
   }
 }
 
-.fa-brands {
+#OTP_P .fa-brands {
   font-size: 18px;
   color: #fff;
   text-align: center;
@@ -170,7 +170,7 @@ body,input{
 }
 
 
-form {
+#OTP_P form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -180,13 +180,13 @@ form {
     grid-row: 1 / 2;
 }
 
-.title {
+#OTP_P .title {
     font-size: 2.2rem;
     color: #444;
     margin-bottom: 10px;  
 }
 
-.input-field {
+#OTP_P .input-field {
     max-width: 350px;
     width: 100%;
     height: 55px;
@@ -199,7 +199,7 @@ form {
     padding: 0 0.4rem;
     position: relative;
 }
-.Input_Refresh{
+#OTP_P .Input_Refresh{
   max-width: 500px;
   width: 100%;
   height: 55px;
@@ -210,7 +210,7 @@ form {
   padding: 0 0.4rem;
 
 }
-button{
+#OTP_P button{
   width: 55px;
   height: 55px;
   outline: none;
@@ -226,11 +226,11 @@ button{
   transition: all 0.5s;
 
 }
-button .fa-solid{
+#OTP_P button .fa-solid{
   padding: 2px 2px 2px 2px;
-  font-size: 30px;
+  font-size: 28px;
 }
-.input-field i{
+#OTP_P .input-field i{
     text-align: center;
     line-height: 55px;
     padding-left: 9px;
@@ -239,7 +239,7 @@ button .fa-solid{
     font-size: 1.58rem;
 }
 
-.input-field input{
+#OTP_P .input-field input{
     background: none;
     outline: none;
     border: none;
@@ -250,12 +250,12 @@ button .fa-solid{
     color: rgb(0, 0, 0);
 }
 
-.input-field input:placeholder-shown {
+#OTP_P .input-field input:placeholder-shown {
     color: #aaa;
     font-weight: 500;
 }
 
-.btn {
+#OTP_P .btn {
     width: 150px;
     height: 49px;
     top: 40%;
@@ -288,31 +288,31 @@ button .fa-solid{
   height: 30px;
   background-color: #444;
   color: rgb(255, 255, 255);
-  font-size: medium;
+  font-size: 14px;
   border-radius: 50px;
 }
 .timer p{
-  margin-top: 28px;
   margin-left: 50px;
   margin-right: 20px;
-  font-size: 19px;
+  font-size: 16px;
 }
-.btn:hover{
+#OTP_P .btn:hover{
     background-color: #138808;
 }
 
 
-.signin-signup {
+#OTP_P .signin-signup {
     position: relative;
-    height: 40%;
-    width: 38%;
-    top: 50%;
-    left: 40%;
-    border-radius: 25px;
-    background-color: rgba(202, 202, 202, 0.534);
-    transform: translate(-50% -50%);
-    display: grid;
-    grid-template-columns: 1fr;
+      height: 80%;
+      width: 35%;
+      top: 10%;
+      left: 33%;
+      border-radius: 25px;
+      background-color: rgba(202, 202, 202, 0.534);
+      transform: translate(-50% -50%);
+      display: grid;
+      grid-template-columns: 1fr;
+      box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
 
 }
 .OTP-box{
@@ -322,7 +322,7 @@ button .fa-solid{
 
 }
 
-#refresh{
+#OTP_P #refresh{
    width: 100px;
    margin-left: 50px;
 }
@@ -355,14 +355,14 @@ button .fa-solid{
 .alert.warning {background-color: #ff9800;}
 
 
-.mobile{
+#OTP_P .mobile{
   color: #000;
   /* background-color: #ffffff; */
   border-radius: 20px;
   height: 90px;
   /* width: 400px; */
 }
-.mobile input{
+#OTP_P .mobile input{
   background-color: transparent;
   width:130px;
   outline: none;
