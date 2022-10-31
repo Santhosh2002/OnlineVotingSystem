@@ -1,4 +1,3 @@
-import React from 'react';
 
 const Captcha = () => {
      let captchaText = document.querySelector('#myCanvas');
@@ -58,7 +57,7 @@ const Captcha = () => {
             
         },2000);
            
-
+      
     } 
     else if (userText.value === "" || Aadhar.value ==="") {
         popupInv.classList.add("open-Alert");

@@ -10,17 +10,16 @@ const User = require("../model/userSchema");
 const Admin = require("../model/adminSchema");
 const Election = require("../model/electionSchema");
 
-
 router.post('/register',async (req, res) => {
     const { aadharnum,mobilenum } = req.body;
 
     if (!aadharnum||!mobilenum) {
-        return res.status(422).json({ error: "Please fill empty Fields" });
+        res.status(422).json({ error: "Please fill empty Fields" });
     }
     try {
         const userExist = await User.findOne({ aadharnum: aadharnum })
         if (userExist) {
-            return res.status(422).json({ error: "Aadhar Aleary Exists" });
+           res.status(422).json({ error: "Aadhar Aleary Exists" });
         }
         const user = new User({ aadharnum,mobilenum })
         
@@ -58,4 +57,23 @@ router.post('/adminlogin',async (req, res) => {
     
 });
 
+router.post('/CandidateLi', (req, res) => {
+    Election.find({}).then(
+        (items) => res.json(items)
+    ).catch(err => console.log(err));
+});
+    
 module.exports = router;
+
+// candidates_details.forEach(Cand => {
+//     const newCand = new Election({
+//         party: Cand.Party,
+//         candidate: Cand.Candidate,
+//         qualifications: Cand.Qualifications,
+//         url: Cand.url,
+//         qualities: Cand.Qualities
+        
+       
+//     })
+//     newCand.save();
+// })

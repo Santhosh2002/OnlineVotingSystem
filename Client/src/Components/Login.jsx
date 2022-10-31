@@ -38,14 +38,14 @@ const Login = () => {
     });
     const data = await res.json();
 
-    if (data.status === 422 || !data) {
+    if (data.status === 422) {
       popupInv.classList.add("open-Alert");
       setTimeout(() => {
             popupInv.classList.remove("open-Alert");
         },2000);
     } else {
-      window.alert("Registeration successfull");
-      console.log("Registeration successfull");
+      
+    navigate("/OTP_Confirm");
     }
 
     }

@@ -1,6 +1,4 @@
 import Topbar from './Top_bar';
-import Image from '../assets/images/male.png';
-import Image2 from '../assets/images/female.png';
 
 const CandidatesList = () => {
     var candidates_details = [
