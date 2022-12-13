@@ -1,134 +1,142 @@
-
-import Topbar from './Top_bar';
-
-const User_Dashboard =()=> {
-  
-    var Data = [
-      { Date: 'Nov 2022',
-        Type: 'State Legislative',
-        Location: 'Himacha Pradesh',
-        Status: 'Ongoing'
-      },
-      { Date: 'Dec 2022',
-        Type: 'State Legislative',
-        Location: 'Gujrat',
-        Status: 'Offline'
-      },
-      { Date: 'TBD',
-        Type: 'Legislative',
-        Location: 'Gopalganj ,bhihar',
-        Status: 'Offline'
-      },
-      { Date: 'Feb 2022',
-        Type: 'State Legislative',
-        Location: 'Uttarakhand',
-        Status: 'Completed'
-      },
-    ];
-    var message = [
-      {
-        Step: 'Step1',
-        Message: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis non asperiores nihil, libero, quod error fugiat animi alias accusantium quaerat assumenda eveniet ipsum distinctio nemo unde illo laudantium molestiae qui eos minima debitis nostrum maxime ullam est? Porro, eveniet cupiditate.'
-      },
-      {
-        Step: 'Step2',
-        Message: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis non asperiores nihil, libero, quod error fugiat animi alias accusantium quaerat assumenda eveniet ipsum distinctio nemo unde illo laudantium molestiae qui eos minima debitis nostrum maxime ullam est? Porro, eveniet cupiditate.'
-      },
-      {
-        Step: 'Step3',
-        Message: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis non asperiores nihil, libero, quod error fugiat animi alias accusantium quaerat assumenda eveniet ipsum distinctio nemo unde illo laudantium molestiae qui eos minima debitis nostrum maxime ullam est? Porro, eveniet cupiditate.'
-      },
-      {
-        Step: 'Step4',
-        Message: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis non asperiores nihil, libero, quod error fugiat animi alias accusantium quaerat assumenda eveniet ipsum distinctio nemo unde illo laudantium molestiae qui eos minima debitis nostrum maxime ullam est? Porro, eveniet cupiditate.'
-      }
-    ]
-      var valueCard = Data.map(function (value) {
-          return <tr>
-                    <td>{value.Date}</td>
-                    <td>{value.Type}</td>
-                    <td>{value.Location}</td>
-                    <td><span className={value.Status}>{value.Status}</span></td>
-                  </tr>
-          
-      })
-    var steps = [
-      {
-        Step: 'Step1',
-        Process: 'Select a Live Poll'
-      },
-      {
-        Step: 'Step2',
-        Process: 'Verify your Voter ID'
-      },
-      {
-        Step: 'Step3',
-        Process: 'View the Candidate List'
-      },
-      {
-        Step: 'Step4',
-        Process: 'Cast your Vote'
-      }];
-    var stepsCard = steps.map(function (value) {
-      return  <div className="card">
-                <div>
-                  <div className="step_number"> {value.Step} </div>
-                  <div className="step_text">{value.Process}</div>
-                </div>
-                <div className="iconbox">
-                  <i className="bx bx-right-arrow-alt" />
-                  <span className="text">Show More</span>
-                </div>
-              </div>
-    })
-    var popup = message.map(function (value) {
-      return <div id="popup" className={value.Step}>
-          <div className="popup_icon">
-            <i className="bx bx-detail" />
-          </div>
-          <div className="popup_content">
-          <h2>{value.Step}</h2>
-          <div className="popup_text">{value.Message}</div>
-          </div>
-          <div className="dismiss">
-            <button className="dismiss_btn">Dismiss</button>
-          </div>
+import Topbar from "./Top_bar";
+import React from "react";
+import Popup from "reactjs-popup";
+import Dashboard_Popup from "./Dashboard_Popup";
+const User_Dashboard = () => {
+  var Data = [
+    {
+      Date: "Nov 2022",
+      Type: "State Legislative",
+      Location: "Himacha Pradesh",
+      Status: "Ongoing",
+    },
+    {
+      Date: "Dec 2022",
+      Type: "State Legislative",
+      Location: "Gujrat",
+      Status: "Offline",
+    },
+    {
+      Date: "TBD",
+      Type: "Legislative",
+      Location: "Gopalganj ,bhihar",
+      Status: "Offline",
+    },
+    {
+      Date: "Feb 2022",
+      Type: "State Legislative",
+      Location: "Uttarakhand",
+      Status: "Completed",
+    },
+  ];
+  var valueCard = Data.map(function (value) {
+    return (
+      <tr>
+        <td>{value.Date}</td>
+        <td>{value.Type}</td>
+        <td>{value.Location}</td>
+        <td>
+          <span className={value.Status}>{value.Status}</span>
+        </td>
+      </tr>
+    );
+  });
+  var steps = [
+    {
+      Step: "Step1",
+      Process: "Select a Live Poll",
+      Message:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis non asperiores nihil, libero, quod error fugiat animi alias accusantium quaerat assumenda eveniet ipsum distinctio nemo unde illo laudantium molestiae qui eos minima debitis nostrum maxime ullam est? Porro, eveniet cupiditate.",
+    },
+    {
+      Step: "Step2",
+      Process: "Verify your Voter ID",
+      Message:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis non asperiores nihil, libero, quod error fugiat animi alias accusantium quaerat assumenda eveniet ipsum distinctio nemo unde illo laudantium molestiae qui eos minima debitis nostrum maxime ullam est? Porro, eveniet cupiditate.",
+    },
+    {
+      Step: "Step3",
+      Process: "View the Candidate List",
+      Message:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis non asperiores nihil, libero, quod error fugiat animi alias accusantium quaerat assumenda eveniet ipsum distinctio nemo unde illo laudantium molestiae qui eos minima debitis nostrum maxime ullam est? Porro, eveniet cupiditate.",
+    },
+    {
+      Step: "Step4",
+      Process: "Cast your Vote",
+      Message:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis non asperiores nihil, libero, quod error fugiat animi alias accusantium quaerat assumenda eveniet ipsum distinctio nemo unde illo laudantium molestiae qui eos minima debitis nostrum maxime ullam est? Porro, eveniet cupiditate.",
+    },
+  ];
+  var stepsCard = steps.map(function (value) {
+    return (
+      <div className="card">
+        <div>
+          <div className="step_number"> {value.Step} </div>
+          <div className="step_text">{value.Process}</div>
         </div>
-    })
-  return (<>
-          
-        <div className="container" id="blur">
-          
-          {/* MAIN STARTS*/}
-          <div className="main" id="blur2">
-            <Topbar PageNam = "Dashboard" />
-            {/* CARDS STARTS */}
-            <div className="cardbox">
-                {stepsCard}
-            </div>
-            {/* CARD ENDS */}
-            {/* DETAILS */}
-            <div className="details">
-              <div className="upcoming_elections">
-                <div className="cardheader">
-                  <h2>Upcoming Elections</h2>
-                  <a href="#" className="btn">View All</a>
-                </div>
-                <table>
-                  <thead>
-                    <tr>
-                      <td>Date</td>
-                      <td>Type</td>
-                      <td>Location</td>
-                      <td>Status</td>
-                    </tr>
-                  </thead> 
-                  <tbody>
-                    {valueCard}
-                  </tbody>
-                </table>
+        <div className="iconbox">
+          <i className="bx bx-right-arrow-alt" />
+          <span
+            className="text"
+            onClick={
+              <Dashboard_Popup
+                trigger={true}
+                Step={value.Step}
+                Message={value.Message}
+              ></Dashboard_Popup>
+            }
+          >
+            Show More
+          </span>
+        </div>
+      </div>
+    );
+  });
+  // var popup = message.map(function (value) {
+  //   return <div id="popup" className={value.Step}>
+  //       <div className="popup_icon">
+  //         <i className="bx bx-detail" />
+  //       </div>
+  //       <div className="popup_content">
+  //       <h2>{value.Step}</h2>
+  //       <div className="popup_text">{value.Message}</div>
+  //       </div>
+  //       <div className="dismiss">
+  //         <button className="dismiss_btn">Dismiss</button>
+  //       </div>
+  //     </div>
+  // })
+  return (
+    <>
+      <div className="container" id="blur">
+        {/* MAIN STARTS*/}
+        <div className="main" id="blur2">
+          <Topbar PageNam="Dashboard" />
+          {/* CARDS STARTS */}
+          <div className="cardbox">{stepsCard}</div>
+          {/* CARD ENDS */}
+          {/* DETAILS */}
+          <div className="details">
+            <div className="upcoming_elections">
+              <div className="cardheader">
+                <h2>Upcoming Elections</h2>
+                <a href="#" className="btn">
+                  View All
+                </a>
               </div>
-              {/* <div className="recent_news">
+              <table>
+                <thead>
+                  <tr>
+                    <td>Date</td>
+                    <td>Type</td>
+                    <td>Location</td>
+                    <td>Status</td>
+                  </tr>
+                </thead>
+                <tbody>{valueCard}</tbody>
+              </table>
+            </div>
+            {/* <div className="recent_news">
                 <div className="cardheader">
                   <h2>Recent News</h2>
                 </div>
@@ -168,16 +176,11 @@ const User_Dashboard =()=> {
                     </tr>
                   </tbody></table>
               </div> */}
-            </div>
-          </div>  
-
+          </div>
         </div>
-        {popup}
-        <div id="overlay" />
-        {/* POPUP ENDS */} 
-        {/* SCRIPT */}
-  </>);
-  
-    }
- 
+      </div>
+    </>
+  );
+};
+
 export default User_Dashboard;

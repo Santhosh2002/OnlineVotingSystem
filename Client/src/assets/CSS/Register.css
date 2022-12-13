@@ -9,8 +9,8 @@ body {
     width: 100%;
 }
 
-#Login_P {
-    height: 85%;
+#Register_P {
+    height: 90%;
     top: 100px;
     left: 60px;
     right: 60px;
@@ -22,20 +22,20 @@ body {
     box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
 }
 
-#Login_P h1 {
+#Register_P h1 {
     font-size: 38px;
     margin: 10px 0 30px;
     line-height: 80px;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-#Login_P p {
+#Register_P p {
     font-size: 19px;
     margin: 10px 0 30px;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-#Login .Company {
+#Register .Company {
     color: black;
     text-decoration: none;
     margin-left: 10px;
@@ -45,7 +45,7 @@ body {
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-#Login nav {
+#Register nav {
     display: flex;
     padding: 2% 1%;
     justify-content: space-between;
@@ -58,24 +58,24 @@ body {
     box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
 }
 
-#Login nav img {
+#Register nav img {
     width: 50px;
     border-radius: 8px;
 }
 
-#Login .nav-links {
+#Register .nav-links {
     flex: 1;
     text-align: right;
 }
 
-#Login .nav-links ul li {
+#Register .nav-links ul li {
     list-style: none;
     display: inline-block;
     padding: 8px 12px;
     position: relative;
 }
 
-#Login .nav-links ul li a {
+#Register .nav-links ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 17.5px;
@@ -83,7 +83,7 @@ body {
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-#Login .nav-links ul li::after {
+#Register .nav-links ul li::after {
     content: "";
     width: 0%;
     height: 2px;
@@ -93,11 +93,11 @@ body {
     transition: 0.5s;
 }
 
-#Login .nav-links ul li:hover::after {
+#Register .nav-links ul li:hover::after {
     width: 100%;
 }
 
-#Login_P .text-box {
+#Register_P .text-box {
     width: 90%;
     color: black;
     position: absolute;
@@ -108,14 +108,14 @@ body {
     text-align: center;
 }
 
-#Login_P .text-box h1 {
+#Register_P .text-box h1 {
     font-size: 40px;
     margin: 10px 0 30px;
     line-height: 80px;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-#Login_P .text-box p {
+#Register_P .text-box p {
     font-size: 21px;
     margin: 10px 0 30px;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -190,63 +190,88 @@ input {
 }
 
 
-#Login_P form {
+#Register_P form {
     display: flex;
     position: relative;
     flex-direction: column;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     padding: 1rem;
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-      
-}
 
-#Login_P .title {
-    font-size: 2.2rem;
+}
+#Register_P form #user_icon{
+    font-size: 50px;
+    color: #444;
+}
+#Register_P .title {
+    font-size: 30px;
     color: #444;
     margin-bottom: 10px;
 }
-
-#Login_P form .input-field {
-    width: 420px;
-    height: 55px;
+#Register_P .form-inputs{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:left;
+}
+#Register_P form .input-field {
+    width: 300px;
+    height: 57px;
     background-color: #f0f0f0;
-    margin: 10px 0;
+    margin: 11px 0;
+    margin-left: 20px;
+    margin-right: 50px;
     border-radius: 55px;
     display: grid;
     grid-template-columns: 15% 85%;
     padding: 0 2%;
     position: relative;
 }
-
-#Login_P .input-field i {
+#Register_P form .input-field.I3{
+    width: 250px;
+}
+#Register_P form .input-field.I4 {
+    width: 500px;
+}
+#Register_P form .input-field.I6 {
+    width: 500px;
+    height: 100px;
+    border-radius: 10px;
+    align-items: center;
+}
+#Register_P .input-field i {
     text-align: center;
     line-height: 55px;
     color: #434034;
     font-size: 1.58rem;
 }
 
-#Login_P .input-field input {
+#Register_P .input-field input {
     background: none;
     outline: none;
     border: none;
-    letter-spacing: 3px;
-    line-height: 1;
     font-weight: 600;
     font-size: 1.2rem;
     color: rgb(0, 0, 0);
 }
-
-#Login_P .input-field input:placeholder-shown {
+#Register_P .input-field textarea {
+    background: none;
+    outline: none;
+    border: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: rgb(0, 0, 0);
+}
+#Register_P .input-field input:placeholder-shown {
     color: #aaa;
     font-weight: 500;
 }
 
-#Login_P form .btn {
+#Register_P form .btn {
     width: 200px;
     height: 49px;
-    top: 40%;
     outline: none;
     border: none;
     border-radius: 48px;
@@ -256,23 +281,21 @@ input {
     font-weight: 600;
     display: inline-block;
     flex-direction: row;
-    margin: 10px 0;
-    margin-top: 15px;
-    margin-left: 30px;
+    margin-top: 10px;
     transition: all 0.5s;
 }
 
-#Login_P .btn:hover {
+#Register_P .btn:hover {
     background-color: #138808;
 }
 
 
-#Login_P .signin-signup {
+#Register_P .signin-signup {
     position: relative;
-    height: 88%;
-    width: 35%;
+    height: 90%;
+    width: 50%;
     top: 5%;
-    left: 33%;
+    left: 25%;
     border-radius: 25px;
     background-color: rgba(202, 202, 202, 0.534);
     transform: translate(-50% -50%);
@@ -282,16 +305,14 @@ input {
 
 }
 
-#Login_P .captcha-box {
+#Register_P .captcha-box {
     display: flex;
-    width: 100%;
     flex-direction: row;
-    justify-content: center;
     margin-top: 15px;
 
 }
 
-#Login_P canvas {
+#Register_P canvas {
     width: 200px;
     height: 70px;
     letter-spacing: 3px;
@@ -299,19 +320,19 @@ input {
     background-color: rgba(174, 188, 199, 0.808);
 }
 
-#Login_P #refresh {
+#Register_P #refresh {
     width: 30%;
     margin-left: 50px;
 }
-#Login_P .Login_link {
-    text-decoration: none;
-    color: #4590b1;
+
+#Register_P .Login_link {
+  text-decoration: none;
+  color: #4590b1;
 }
 .alert {
 
     position: absolute;
     padding: 20px;
-    left: 8%;
     top: 10px;
     width: 450px;
     text-align: center;
@@ -319,7 +340,7 @@ input {
     color: white;
     transition: opacity 0.6s;
     margin-bottom: 30px;
-    transform: translate(65%, 2%);
+    transform: translate(71%, 5%);
     border-radius: 10px;
     scale: 1;
     visibility: hidden;
@@ -329,7 +350,7 @@ input {
 
 .open-Alert {
     visibility: visible;
-    transform: translate(65%, 2%) scale(1);
+    transform: translate(71%, 5%) scale(1);
 }
 
 .alert.success {

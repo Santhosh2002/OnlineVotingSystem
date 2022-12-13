@@ -1,101 +1,160 @@
-import logo from '../assets/images/Logo 2.png';
-import Popup from './Popup';
-import { Link , useNavigate } from 'react-router-dom';
-import React, { useState } from 'react';
-import Captcha from './Captcha';
-const Login = () => {
-  let popupIn = document.getElementById("A1");
-    let popupInv = document.getElementById("A4");
-    let popupWar = document.getElementById("A3");
-  const navigate = useNavigate();
-    const [user, setUser] = useState({
+import logo from "../assets/images/Logo 2.png";
+import { Link, useNavigate } from "react-router-dom";
+import React, { useState, Component } from "react";
+import {
+  loadCaptchaEnginge,
+  LoadCanvasTemplate,
+  LoadCanvasTemplateNoReload,
+  validateCaptcha,
+} from "react-simple-captcha";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import OTP_Confirmation from "./OTP_Confirmation";
+
+class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
       aadharnum: "",
-      mobilenum: ""
-    });
-    
-    let name, value;
-    const handleInputs = (e) => {
-      console.log(e);
-      name = e.target.name;
-      value = e.target.value;
-      setUser({...user, [name]:value })
-    }
-    
-  const Login_fun = async (e) => {
+      mobilenum: "",
+    };
+    this.Login_fun = this.Login_fun.bind(this);
+  }
+  componentDidMount = () => {
+    loadCaptchaEnginge(6);
+  };
+
+  Login_fun = async (e) => {
     e.preventDefault();
-       
-    const { aadharnum,mobilenum } = user;
-    
-    const res = await fetch("/register", {
+    let user_captcha = document.getElementById("Captcha").value;
+
+    const { aadharnum, mobilenum } = this.state;
+
+    const res = await fetch("/login", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         aadharnum,
-        mobilenum
-      })
+        mobilenum,
+      }),
     });
-    const data = await res.json();
-
-    if (data.status === 422) {
-      popupInv.classList.add("open-Alert");
-      setTimeout(() => {
-            popupInv.classList.remove("open-Alert");
-        },2000);
+    // const data = await res.json();
+    // console.log(data);
+    if (res.status === 421) {
+      toast.warn("Warning!  Please fill the Fields");
     } else {
-      
-    navigate("/OTP_Confirm");
-    }
+      if (res.status === 201 && validateCaptcha(user_captcha) === true) {
+        // new OTP_Confirmation().onSignInSubmit();
 
+        toast.success("Success!  Authentication Successfull");
+        window.location.href = "./OTP_Confirm";
+        loadCaptchaEnginge(6);
+        document.getElementById("Captcha1").value = "";
+
+        // navigate("/ElectionList");
+      } else if (res.status === 202) {
+        toast.error("Unsuccess!  Authentication Failed");
+      } else {
+        toast.warn("Captcha!  Invalid Captcha");
+        document.getElementById("Captcha1").value = "";
+      }
     }
-      return (
-        <>
-          
-          <div className="header" id='Login' onLoad={Captcha}>
-            <nav>
-              <a href="#first"><img src={logo} className="App-logo" alt="logo" /></a>
-              <a href="index.html" className="Company">Online Voting System</a>
-              <Popup type = 'Aadhar Number' />
-              <div className="nav-links" id="navLinks">
-                <i className="fa-solid fa-rectangle-xmark" onClick={['hideMenu']} />
-                <ul>
-                  <li><Link to ='/' >HOME</Link></li>
-                  <li><Link to ='/AdminLogin'>ADMIN LOGIN</Link></li>
-                </ul>
-              </div>
-              <i className="fa-solid fa-bars" onclick={['showMenu']} />
-            </nav>
-          </div>
-          <div className="Home" id ="Login_P">
-            
-              <div className="signin-signup">
-                <form method ="POST" action="#" className="sign-in-form">
-                  <i className="fa-solid fa-circle-user" />
-                  <h2 className="title">Voter</h2>
-                  <div className="input-field">
-                    <i className="fas fa-user" />
-                  <input type="number" name ="aadharnum" id="Aadhar" placeholder="Aadhar Number" autoComplete='off' value={user.aadharnum} onChange={handleInputs} />
-                  </div>
-                  <div className="input-field">
-                    <i className="fas fa-user" />
-                  <input type="number" name ="mobilenum" id="Mobile" placeholder="Mobile Number" autoComplete='off' value={user.mobilenum} onChange={handleInputs} />
-                  </div>
-                  <div className=" input-field">
-                    <i className="fas fa-lock" />
-                    <input type="text" id="Captcha" placeholder="Enter CAPTCHA" />
-                  </div>
-                  <div className="captcha-box">
-                    <canvas id="myCanvas"> </canvas>
-                    <input type="button" id="refresh" className="btn solid" defaultValue="Refresh" />
-                  </div>
-                  <input type="button" id="gen_otp" onClick={Login_fun} className="btn solid" defaultValue="Generate OTP" />
-                </form>
-              </div>
+  };
+  render() {
+    return (
+      <>
+        <div className="header" id="Login">
+          <nav>
+            <Link to="/">
+              <img src={logo} className="App-logo" alt="logo" />
+            </Link>
+            <Link to="/" className="Company">
+              Online Voting System
+            </Link>
+            <ToastContainer
+              position="top-right"
+              autoClose={2000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="colored"
+            />
+            <div className="nav-links" id="navLinks">
+              <i
+                className="fa-solid fa-rectangle-xmark"
+                onClick={["hideMenu"]}
+              />
+              <ul>
+                <li>
+                  <Link to="/">HOME</Link>
+                </li>
+                <li>
+                  <Link to="/AdminLogin">ADMIN LOGIN</Link>
+                </li>
+              </ul>
             </div>
-        
-        </>
-      );
-    }
- 
+            <i className="fa-solid fa-bars" onclick={["showMenu"]} />
+          </nav>
+        </div>
+        <div className="Home" id="Login_P">
+          <div className="signin-signup">
+            <form method="POST" action="#" className="sign-in-form">
+              <i className="fa-solid fa-circle-user" />
+              <h2 className="title">Voter Login</h2>
+              <div className="input-field">
+                <i className="fas fa-user" />
+                <input
+                  type="number"
+                  name="aadharnum"
+                  id="Aadhar"
+                  placeholder="Aadhar Number"
+                  autoComplete="off"
+                  onChange={(e) => this.setState({ aadharnum: e.target.value })}
+                />
+              </div>
+              <div className="input-field">
+                <i className="fas fa-user" />
+                <input
+                  type="number"
+                  name="mobilenum"
+                  id="Mobile"
+                  placeholder="Mobile Number"
+                  autoComplete="off"
+                  onChange={(e) => this.setState({ mobilenum: e.target.value })}
+                />
+              </div>
+              <div className=" input-field">
+                <i className="fas fa-lock" />
+                <input type="text" id="Captcha" placeholder="Enter CAPTCHA" />
+              </div>
+              <div className="captcha-box">
+                <LoadCanvasTemplate reloadColor="cadetblue" />
+                <input
+                  type="button"
+                  id="gen_otp"
+                  onClick={this.Login_fun}
+                  className="btn solid"
+                  defaultValue="Generate OTP"
+                />
+              </div>
+              <p>
+                New User? Click Here to{" "}
+                <Link to="/Register" className="Login_link">
+                  Register
+                </Link>
+              </p>
+            </form>
+          </div>
+        </div>
+      </>
+    );
+  }
+}
+
 export default Login;

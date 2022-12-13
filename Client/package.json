@@ -10,6 +10,9 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.1.0",
     "cdbreact": "^1.5.3",
+    "firebase": "^9.14.0",
+    "jsonwebtoken": "^8.5.1",
+    "messagebird": "^3.8.1",
     "mongodb": "^4.10.0",
     "react": "^18.2.0",
     "react-chartjs-2": "^4.3.1",
@@ -17,6 +20,9 @@
     "react-helmet": "^6.1.0",
     "react-router-dom": "^6.4.2",
     "react-scripts": "5.0.1",
+    "react-simple-captcha": "^9.0.1",
+    "react-toastify": "^9.1.1",
+    "reactjs-popup": "^2.0.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

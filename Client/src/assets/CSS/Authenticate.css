@@ -60,6 +60,7 @@ body{
   padding: 20px;
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
+  
 }
 
 #Auth .Home .text-box .signin-signup{
@@ -213,8 +214,8 @@ body{
   background-color: rgba(174, 188, 199, 0.808);
 }
 
-#refresh {
-  width: 100px;
+#Auth #refresh1 {
+  width: 40%;
   margin-left: 50px;
   font-size: 14px;
   text-transform: uppercase;
@@ -260,7 +261,7 @@ body{
 }
 
 #Auth #Login {
-  width: 150px;
+  width: 30%;
   height: 49px;
   top: 40%;
   outline: none;
@@ -270,13 +271,16 @@ body{
   color: white;
   text-transform: uppercase;
   font-weight: 600;
+  font-size: medium;
   display: inline-block;
   flex-direction: row;
   margin: 10px 0;
   margin-top: 15px;
   transition: all 0.5s;
 }
-
+#Auth #Login:hover{
+    background-color: #138808;
+}
 #Auth .btn:hover {
   background-color: #138808;
 }
@@ -284,7 +288,7 @@ body{
 #Auth .signin-signup {
   position: relative;
   height: 40%;
-  width: 50%;
+  width: 45%;
   top: 50%;
   left: 25%;
   border-radius: 25px;
@@ -292,5 +296,4 @@ body{
   transform: translate(-50% -50%);
   display: grid;
   grid-template-columns: 1fr;
-
 }
