@@ -24,7 +24,7 @@ body {
 
 /* MAIN */
 
-#Auth {
+#Auth_OTP {
   position: absolute;
   width: calc(100% - 300px);
   left: 300px;
@@ -33,13 +33,13 @@ body {
   transition: all 0.5s ease;
 }
 
-#Auth.active {
+#Auth_OTP.active {
   width: calc(100% - 80px);
   left: 80px;
 }
 
 /* FOMRS */
-#Auth .Home {
+#Auth_OTP .Home {
   position: relative;
   width: 100%;
   padding: 20px;
@@ -50,7 +50,7 @@ body {
   right: 20px;
 }
 
-#Auth .text-box {
+#Auth_OTP .text-box {
   position: relative;
   min-height: 600px;
   background: var(--white);
@@ -58,15 +58,15 @@ body {
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
 }
-/* 
-#Auth .Home .text-box .signin-signup {
+
+/* #Auth_OTP .Home .text-box .signin-signup {
   position: relative;
   justify-content: center;
   align-items: center;
   min-height: 600px;
 } */
 
-#Auth form {
+#Auth_OTP form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -75,58 +75,90 @@ body {
   grid-row: 1/2;
 }
 
-#Auth .sign-in-form {
+#Auth_OTP .sign-in-form {
   min-height: 600px;
 }
 
-#Auth .sign-in-form i {
+#Auth_OTP .sign-in-form i {
   text-align: center;
   line-height: 60px;
   color: #ff9c2c;
   font-size: 60px;
 }
 
-#Auth .title {
+#Auth_OTP .title {
   font-size: 2.2rem;
   color: #444;
   margin-bottom: 10px;
 }
 
-#Auth .input-field {
-  max-width: 400px;
+#Auth_OTP .input-field {
+  max-width: 350px;
   width: 100%;
-  height: 60px;
+  height: 55px;
   background-color: #f0f0f0;
   margin: 10px 0;
-  border-radius: 60px;
-  display: grid;
-  grid-template-columns: 15% 85%;
+  margin-left: 30px;
+  border-radius: 55px;
+  display: flex;
+  flex-direction: row;
   padding: 0 0.4rem;
   position: relative;
 }
-
-#Auth .input-field i {
+#Auth_OTP .Input_Refresh {
+  max-width: 500px;
+  width: 100%;
+  height: 55px;
+  margin: 10px 0;
+  border-radius: 55px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  padding: 0 0.4rem;
+}
+#Auth_OTP #Resend {
+  width: 55px;
+  height: 55px;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  color: rgb(0, 0, 0);
+  display: inline-block;
+  margin: 10px 0;
+  margin-left: 20px;
+  transition: all 0.5s;
+}
+#Auth_OTP #Resend .fa-solid {
+  margin-bottom: 3px;
+  font-size: 28px;
+}
+#Auth_OTP .input-field i {
   text-align: center;
-  line-height: 60px;
+  line-height: 55px;
+  padding-left: 9px;
+  padding-right: 9px;
   color: #ff9c2c;
-  font-size: 2rem;
+  font-size: 1.58rem;
 }
 
-#Auth .input-field input {
+#Auth_OTP .input-field input {
   background: none;
   outline: none;
   border: none;
+  letter-spacing: 3px;
   line-height: 1;
   font-weight: 600;
-  font-size: 1.26rem;
+  font-size: 1.2rem;
+  color: rgb(0, 0, 0);
 }
 
-#Auth .input-field input:placeholder-shown {
+#Auth_OTP .input-field input:placeholder-shown {
   color: #aaa;
   font-weight: 500;
 }
 
-#Auth .btn1 {
+#Auth_OTP .btn {
   width: 150px;
   height: 49px;
   top: 40%;
@@ -135,17 +167,41 @@ body {
   border-radius: 48px;
   background-color: #4590b1;
   color: white;
-  font-size: 1.3rem;
   font-weight: 600;
+  text-transform: uppercase;
   display: inline-block;
   flex-direction: row;
   margin: 10px 0;
   margin-top: 15px;
   transition: all 0.5s;
-  cursor: pointer;
 }
-
-#Auth .btn1:hover {
+#Auth_OTP .timer {
+  width: 500px;
+  height: 30px;
+  font-size: 15px;
+  margin-right: 50px;
+  margin-top: 25px;
+  transition: all 0.5s;
+  display: flex;
+  flex-direction: row;
+}
+#Auth_OTP .timer span {
+  min-width: 100px;
+  height: 30px;
+  background-color: #444;
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  padding-left: 30px;
+  padding-top: 3px;
+  padding-right: 30px;
+  border-radius: 50px;
+}
+#Auth_OTP .timer p {
+  margin-left: 50px;
+  margin-right: 20px;
+  font-size: 16px;
+}
+#Auth_OTP .btn:hover {
   background-color: #138808;
 }
 
@@ -190,58 +246,33 @@ body {
   }
 }
 
-#Auth .captcha-box {
-  display: flex;
-  flex-direction: row;
-  margin-top: 15px;
+#Auth_OTP .mobile {
+  color: #000;
+  /* background-color: #ffffff; */
+  border-radius: 20px;
+  height: 90px;
+  /* width: 400px; */
 }
-
-#Auth canvas {
-  width: 200px;
-  height: 70px;
-  letter-spacing: 3px;
-  border-radius: 10px;
-  background-color: rgba(174, 188, 199, 0.808);
-}
-
-#Auth #refresh1 {
-  width: 40%;
-  margin-left: 50px;
-  font-size: 14px;
-  text-transform: uppercase;
-}
-
-#Auth #Login {
-  width: 30%;
-  height: 49px;
-  top: 40%;
+#Auth_OTP .mobile input {
+  background-color: transparent;
+  width: 130px;
   outline: none;
   border: none;
-  border-radius: 48px;
-  background-color: #4590b1;
-  color: white;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: medium;
-  display: inline-block;
-  flex-direction: row;
-  margin: 10px 0;
-  margin-top: 15px;
-  transition: all 0.5s;
+  font-size: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
-#Auth #Login:hover {
-  background-color: #138808;
-}
-#Auth .btn1:hover {
+
+#Auth_OTP .btn:hover {
   background-color: #138808;
 }
 
-#Auth .signin-signup {
+#Auth_OTP .signin-signup {
   position: relative;
   height: 40%;
   width: 45%;
   top: 50%;
   left: 25%;
+  justify-content: center;
   border-radius: 25px;
   background-color: rgba(202, 202, 202, 0.534);
   transform: translate(-50% -50%);

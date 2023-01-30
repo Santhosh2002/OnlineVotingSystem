@@ -1,14 +1,28 @@
 const hre = require("hardhat");
+const ethers = require("ethers");
+
+async function createBytes(args) {
+  const name = args[0];
+  const bytes = ethers.utils.formatBytes32String(name);
+  return bytes;
+}
 
 const main = async () => {
-  // const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-  // const ONE_YEAR_IN_SECS = 365 * 24 * 60 * 60;
-  // const unlockTime = currentTimestampInSeconds + ONE_YEAR_IN_SECS;
-
-  // const lockedAmount = hre.ethers.utils.parseEther("1");
-
-  const Vote = await hre.ethers.getContractFactory("Vote");
-  const vote = await Vote.deploy();
+  let candidates = [
+    "Candidate 1",
+    "Candidate 2",
+    "Candidate 3",
+    "Candidate 4",
+    "Candidate 5",
+    "Candidate 6",
+  ];
+  let bytesCandidate = [];
+  for (let i = 0; i < candidates.length; i++) {
+    const bytecan = createBytes(candidates[i]);
+    bytesCandidate.push(bytecan);
+  }
+  const Votes = await hre.ethers.getContractFactory("Votes");
+  const vote = await Votes.deploy(bytesCandidate);
 
   await vote.deployed();
 

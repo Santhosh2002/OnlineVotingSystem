@@ -12,6 +12,8 @@ import Authentication from "../Components/Authentication";
 import CandidateList from "../Components/Candidates_list";
 import ElectionList from "../Components/Election_list";
 import Polling from "../Components/Polling";
+import Results from "../Components/Result";
+import Authentication_OTP from "../Components/Authentication_OTP";
 import "../assets/CSS/OTP_Confirmation.css";
 import "../assets/CSS/Candidate_List.css";
 import "../assets/CSS/Election_list.css";
@@ -24,21 +26,14 @@ import "../assets/CSS/index.css";
 import "../assets/CSS/login.css";
 import "../assets/CSS/Register.css";
 import "../assets/CSS/Admin_Login.css";
+import "../assets/CSS/result.css";
+import "../assets/CSS/Authentication_OTP.css";
 import { Route, Routes } from "react-router-dom";
 import { useEffect } from "react";
 import Web3 from "web3";
+import { Result } from "antd";
 
 function App() {
-  const providerUrl = process.env.PROVIDER_URL;
-  useEffect(() => {
-    const web3 = new Web3(providerUrl);
-
-    let provider = window.ethereum;
-
-    if (typeof provider != "undefined") {
-      provider = window.ether;
-    }
-  }, []);
   return (
     <Routes>
       <Route
@@ -115,6 +110,24 @@ function App() {
           <>
             <SideNavbar></SideNavbar>
             <ElectionList></ElectionList>
+          </>
+        }
+      ></Route>
+      <Route
+        path="Results"
+        element={
+          <>
+            <SideNavbar></SideNavbar>
+            <Results></Results>
+          </>
+        }
+      ></Route>
+      <Route
+        path="Authentication_OTP"
+        element={
+          <>
+            <SideNavbar></SideNavbar>
+            <Authentication_OTP></Authentication_OTP>
           </>
         }
       ></Route>

@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
 
 * {
   margin: 0;
   padding: 0;
 }
-body{
+body {
   width: 100%;
 }
 #OTP_P {
@@ -48,7 +48,6 @@ body{
   background-color: rgba(0, 0, 0, 0.761);
   width: 100%;
   height: 20px;
-
 }
 #OTP nav img {
   width: 60px;
@@ -111,10 +110,10 @@ body{
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-nav .fa-solid {
+#OTP nav .fa-solid {
   display: none;
 }
-div .fa-solid{
+#OTP_P div .fa-solid {
   padding-bottom: 20px;
   font-size: 60px;
 }
@@ -165,41 +164,41 @@ div .fa-solid{
   text-align: center;
 }
 
-body,input{
-    font-family: 'Poppins', sans-serif;
+body,
+input {
+  font-family: "Poppins", sans-serif;
 }
 
-
 #OTP_P form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
 }
 
 #OTP_P .title {
-    font-size: 2.2rem;
-    color: #444;
-    margin-bottom: 10px;  
+  font-size: 2.2rem;
+  color: #444;
+  margin-bottom: 10px;
 }
 
 #OTP_P .input-field {
-    max-width: 350px;
-    width: 100%;
-    height: 55px;
-    background-color: #f0f0f0;
-    margin: 10px 0;
-    margin-left: 30px;
-    border-radius: 55px;
-    display: flex;
-    flex-direction: row; 
-    padding: 0 0.4rem;
-    position: relative;
+  max-width: 350px;
+  width: 100%;
+  height: 55px;
+  background-color: #f0f0f0;
+  margin: 10px 0;
+  margin-left: 30px;
+  border-radius: 55px;
+  display: flex;
+  flex-direction: row;
+  padding: 0 0.4rem;
+  position: relative;
 }
-#OTP_P .Input_Refresh{
+#OTP_P .Input_Refresh {
   max-width: 500px;
   width: 100%;
   height: 55px;
@@ -208,9 +207,8 @@ body,input{
   display: flex;
   flex-direction: row;
   padding: 0 0.4rem;
-
 }
-#OTP_P button{
+#OTP_P button {
   width: 55px;
   height: 55px;
   outline: none;
@@ -219,152 +217,112 @@ body,input{
   background-color: #f0f0f0;
   color: rgb(0, 0, 0);
   display: inline-block;
-  flex-direction: row;
   margin: 10px 0;
   margin-left: 20px;
   padding: 0 0.4rem;
   transition: all 0.5s;
-
 }
-#OTP_P button .fa-solid{
+#OTP_P button .fa-solid {
   padding: 2px 2px 2px 2px;
   font-size: 28px;
 }
-#OTP_P .input-field i{
-    text-align: center;
-    line-height: 55px;
-    padding-left: 9px;
-    padding-right: 9px;
-    color:#434034;
-    font-size: 1.58rem;
+#OTP_P .input-field i {
+  text-align: center;
+  line-height: 55px;
+  padding-left: 9px;
+  padding-right: 9px;
+  color: #434034;
+  font-size: 1.58rem;
 }
 
-#OTP_P .input-field input{
-    background: none;
-    outline: none;
-    border: none;
-    letter-spacing: 3px;
-    line-height: 1;
-    font-weight: 600;
-    font-size: 1.2rem;
-    color: rgb(0, 0, 0);
+#OTP_P .input-field input {
+  background: none;
+  outline: none;
+  border: none;
+  letter-spacing: 3px;
+  line-height: 1;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: rgb(0, 0, 0);
 }
 
 #OTP_P .input-field input:placeholder-shown {
-    color: #aaa;
-    font-weight: 500;
+  color: #aaa;
+  font-weight: 500;
 }
 
 #OTP_P .btn {
-    width: 150px;
-    height: 49px;
-    top: 40%;
-    outline: none;
-    border: none;
-    border-radius: 48px;
-    background-color: #4590b1;
-    color: white;
-    text-transform: uppercase;
-    font-weight: 600;
-    display: inline-block;
-    flex-direction: row;
-    margin: 10px 0;
-    margin-top: 55px;
-    transition: all 0.5s;
+  width: 150px;
+  height: 49px;
+  top: 40%;
+  outline: none;
+  border: none;
+  border-radius: 48px;
+  background-color: #4590b1;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: inline-block;
+  flex-direction: row;
+  margin: 10px 0;
+  margin-top: 55px;
+  transition: all 0.5s;
 }
-.timer{
-  width: 300px;
+#OTP_P .timer {
+  width: 500px;
   height: 30px;
   font-size: 15px;
-  align-items: center;
-  margin-right: 220px;
+  margin-right: 50px;
   margin-top: 25px;
   transition: all 0.5s;
   display: flex;
   flex-direction: row;
 }
-.timer span{
-  width: 100px;
+#OTP_P .timer span {
+  min-width: 100px;
   height: 30px;
   background-color: #444;
   color: rgb(255, 255, 255);
   font-size: 14px;
+  padding-left: 30px;
+  padding-top: 3px;
+  padding-right: 30px;
   border-radius: 50px;
 }
-.timer p{
+#OTP_P .timer p {
   margin-left: 50px;
   margin-right: 20px;
   font-size: 16px;
 }
-#OTP_P .btn:hover{
-    background-color: #138808;
+#OTP_P .btn:hover {
+  background-color: #138808;
 }
-
 
 #OTP_P .signin-signup {
-    position: relative;
-      height: 80%;
-      width: 35%;
-      top: 10%;
-      left: 33%;
-      border-radius: 25px;
-      background-color: rgba(202, 202, 202, 0.534);
-      transform: translate(-50% -50%);
-      display: grid;
-      grid-template-columns: 1fr;
-      box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-
-}
-.OTP-box{
-  display: flex;
-  flex-direction: row;
-  margin-top: 10px;
-
+  position: relative;
+  height: 85%;
+  width: 36%;
+  top: 10%;
+  left: 33%;
+  justify-content: center;
+  border-radius: 25px;
+  background-color: rgba(202, 202, 202, 0.534);
+  transform: translate(-50% -50%);
+  display: grid;
+  grid-template-columns: 1fr;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
 }
 
-#OTP_P #refresh{
-   width: 100px;
-   margin-left: 50px;
-}
-
-
-.alert {
-  
-  position: absolute;
-  padding: 20px;
-  top: 10px;
-  width: 450px;
-  text-align: center;
-  background-color: #f44336;
-  color: white;
-  transition: opacity 0.6s;
-  margin-bottom: 30px;
-  transform: translate(69%,5%);
-  border-radius: 10px;
-  scale: 1;
-  visibility: hidden;
-  transition: transform 0.4s;
-
-}
-.open-Alert{
-  visibility: visible;
-  transform: translate(69%,5%) ;
-}
-.alert.success {background-color: #04AA6D;}
-.alert.info {background-color: #2196F3;}
-.alert.warning {background-color: #ff9800;}
-
-
-#OTP_P .mobile{
+#OTP_P .mobile {
   color: #000;
   /* background-color: #ffffff; */
   border-radius: 20px;
   height: 90px;
   /* width: 400px; */
 }
-#OTP_P .mobile input{
+#OTP_P .mobile input {
   background-color: transparent;
-  width:130px;
+  width: 130px;
   outline: none;
   border: none;
   font-size: 20px;

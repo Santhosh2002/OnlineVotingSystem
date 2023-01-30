@@ -6,11 +6,13 @@ import App from "./Pages/App";
 import { VoteProvider } from "./context/VoteContext";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>
+  <VoteProvider>
+    <React.StrictMode>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </React.StrictMode>
+  </VoteProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

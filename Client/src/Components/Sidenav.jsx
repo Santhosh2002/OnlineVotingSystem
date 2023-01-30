@@ -44,7 +44,7 @@ class SideNav extends Component {
             </Link>
           </li>
           <li>
-            <Link to="/Polling">
+            <Link to="/Results">
               <i className="bx bx-trophy" />
               <span className="Title">Results</span>
             </Link>

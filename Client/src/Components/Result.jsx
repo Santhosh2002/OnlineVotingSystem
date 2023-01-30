@@ -1,6 +1,10 @@
 import Topbar from "./Top_bar";
-
+import BarChart from "./BarChart";
+import { VoteContext } from "../context/VoteContext";
+import React from "react";
+import { useContext } from "react";
 const Result = () => {
+  const {} = useContext(VoteContext);
   var PollingP = [
     {
       Candidate: "Candidate 1",
@@ -33,80 +37,58 @@ const Result = () => {
       url: "https://i.pinimg.com/736x/d8/0e/09/d80e09a69eb3bea45b20f73c7d8dad54.jpg",
     },
   ];
-
+  var PollingR = [
+    { Result: "49%" },
+    { Result: "19%" },
+    { Result: "15%" },
+    { Result: "10%" },
+    { Result: "5%" },
+    { Result: "2%" },
+  ];
   var PollingCards = PollingP.map(function (name) {
     return (
       <div className="card C1">
         <div className="imgBox">
-          <img src="./Images/INC.png" />
-          <h2>Candidate 2</h2>
-          <p>Party : INC</p>
-          <p>% : 19</p>
+          <img src={name.url} />
+          <h2>{name.Candidate}</h2>
+          <p>{name.Party}</p>
         </div>
       </div>
     );
   });
+  var PollingCardsResult = PollingR.map(function (name) {
+    return (
+      <div className="Resultcard R1">
+        <div className="imgBox">
+          <p>{name.Result}</p>
+        </div>
+      </div>
+    );
+  });
+
   return (
-    <div className="container" id="blur">
-      <div className="main" id="Resu">
-        <Topbar PageNam="Polling" />
-        {/* FORMS STARTS */}
-        <div className="Home">
-          <div className="text-box">
-            <h1>Polling Results</h1>
-            <div className="graph" id="graph"></div>
-            <div className="Res">
-              <div className="candidates">
-                <div className="card C1">
-                  <div className="imgBox">
-                    <img src="./Images/BJP_Flag.svg.png" />
-                    <h2>Candidate 1</h2>
-                    <p>Party : BJP</p>
-                    <p>% : 65</p>
-                  </div>
-                </div>
-                <div className="card C1">
-                  <div className="imgBox">
-                    <img src="./Images/INC.png" />
-                    <h2>Candidate 2</h2>
-                    <p>Party : INC</p>
-                    <p>% : 19</p>
-                  </div>
-                </div>
-                <div className="card C1">
-                  <div className="imgBox">
-                    <img src="./Images/NPP_Flag.jpg" />
-                    <h2>Candidate 3</h2>
-                    <p>Party : NPP</p>
-                    <p>% : 1</p>
-                  </div>
-                </div>
-                <div className="card C1">
-                  <div className="imgBox">
-                    <img src="./Images/NCP.png" />
-                    <h2>Candidate 4</h2>
-                    <p>Party : NCP</p>
-                    <p>% : 2</p>
-                  </div>
-                </div>
-                <div className="card C1">
-                  <div className="imgBox">
-                    <img src="./Images/CPI.png" />
-                    <h2>Candidate 5</h2>
-                    <p>Party : CPI</p>
-                    <p>% : 5</p>
-                  </div>
-                </div>
-                <div className="card C1">
-                  <div className="imgBox">
-                    <img src="./Images/bsp.png" />
-                    <h2>Candidate 6</h2>
-                    <p>Party : BSP</p>
-                    <p>% : 6</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <div className="main" id="Resu">
+      <Topbar PageNam="Results" />
+      {/* FORMS STARTS */}
+      <div className="Home">
+        <div className="text-box">
+          <h1>Polling Results</h1>
+          <div className="graph" id="graph">
+            <BarChart
+              Data={[20, 15, 16, 3, 4, 9]}
+              Lables={[
+                "Candidate1",
+                "Candidate2",
+                "Candidate3",
+                "Candidate4",
+                "Candidate5",
+                "Candidate6",
+              ]}
+            />
+          </div>
+          <div className="Res">
+            <div className="candidates">{PollingCards}</div>
+            <div className="results">{PollingCardsResult}</div>
           </div>
         </div>
       </div>

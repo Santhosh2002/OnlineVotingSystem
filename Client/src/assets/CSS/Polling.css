@@ -1,127 +1,113 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 :root {
-    --orange: #ff9c2c;
-    --white: #fff;
-    --blue: #4590b1;
-    --dark_orange: #bf6f13;
-    --grey: #333;
-    --green: #18b60d;
-    --light_grey: rgb(144, 143, 143);
+  --orange: #ff9c2c;
+  --white: #fff;
+  --blue: #4590b1;
+  --dark_orange: #bf6f13;
+  --grey: #333;
+  --green: #18b60d;
+  --light_grey: rgb(144, 143, 143);
 }
 
 body {
-    min-height: 100vh;
-    overflow-x: hidden;
-
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* MAIN */
 
 #Poll {
-    position: absolute;
-    width: calc(100% - 300px);
-    left: 300px;
-    min-height: 100vh;
-    background: var(--white);
-    transition: all 0.5s ease;
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100vh;
+  background: var(--white);
+  transition: all 0.5s ease;
 }
 
 #Poll.active {
-    width: calc(100% - 80px);
-    left: 80px;
+  width: calc(100% - 80px);
+  left: 80px;
 }
-
-
 
 #Poll .text-box {
-    text-align: center;
-}
-
-#Poll .text-box .graph {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
-    width: 85%;
-    padding: 5px;
-    margin-left: 3.5%;
-    border-radius: 20px;
-    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
 }
 
 #Poll .text-box .candidates {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    width: 88%;
-    top: 20px;
-    padding: 40px;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-left: 2%;
-
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 88%;
+  top: 20px;
+  padding: 40px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-left: 2%;
 }
 
 #Poll .text-box .candidates .card {
-    position: relative;
-    background: var(--white);
-    width: 300px;
-    height: 300px;
-    padding: 35px;
-    border-radius: 20px;
-    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 60px;
+  position: relative;
+  background: var(--white);
+  width: 300px;
+  height: 300px;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 60px;
 }
 
 #Poll .card .imgBox {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform: translateY(-80px);
-    z-index: 99;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-80px);
+  z-index: 99;
 }
 
 #Poll .card .imgBox img {
-    width: 150px;
-    height: 150px;
-    margin-left: 10%;
-    align-items: center;
-    border-radius: 50%;
-    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+  width: 150px;
+  height: 150px;
+  margin-left: 10%;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
 }
 #Poll .card .imgBox h2 {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 #Poll .card .votebutton {
-    width: 100px;
-    height: 49px;
-    top: 80%;
-    outline: none;
-    border: none;
-    border-radius: 48px;
-    background-color: #4590b1;
-    color: white;
-    font-size: 1rem;
-    font-weight: 600;
-    display: inline-block;
-    flex-direction: row;
-    margin: 10px 0;
-    margin-top: 15px;
-    transition: all 0.5s;
-    cursor: pointer;
-
+  width: 100px;
+  height: 49px;
+  top: 80%;
+  outline: none;
+  border: none;
+  border-radius: 48px;
+  background-color: #4590b1;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  display: inline-block;
+  flex-direction: row;
+  margin: 10px 0;
+  margin-top: 15px;
+  transition: all 0.5s;
+  cursor: pointer;
 }
 
 #Poll .Home .text-box #title {
-    font-size: 36px;
-    margin-bottom: 20px;
-
+  font-size: 36px;
+  margin-bottom: 20px;
 }

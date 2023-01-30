@@ -1,60 +1,101 @@
 import React, { Component } from "react";
-
-const Dashboard_fun = () => {
-  let toggle = document.querySelector(".toggle");
-  let navigation = document.querySelector(".navigation");
-  let list = document.querySelectorAll(".navigation li");
-  let main = document.querySelector(".main");
-
-  toggle.onclick = function () {
-    navigation.classList.toggle("active");
-    main.classList.toggle("active");
+import { useEffect } from "react";
+import { useState } from "react";
+import { PopupMenu } from "react-simple-widgets";
+const Topbar = (props) => {
+  const [userData, setUserData] = useState("");
+  const [Name_Letter, setLetter] = useState("");
+  const profile_Data = async () => {
+    const res = await fetch("/otp_Confirm", {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+    });
+    const data = await res.json();
+    setUserData(data);
+    let letter = data.firstname.charAt(0).toUpperCase();
+    setLetter(letter);
+    // console.log(data);
   };
-
-  function activeLink() {
-    list.forEach((item) => item.classList.remove("hovered"));
-    this.classList.add("hovered");
-  }
-  list.forEach((item) => item.addEventListener("mouseover", activeLink));
-
-  //  POPUP
-};
-function popup_toggle() {
-  var blur = document.getElementById("blur");
-  blur.classList.toggle("popup_active");
-  var popup = document.getElementById("popup");
-  popup.classList.toggle("popup_active");
-  var overlay = document.getElementById("overlay");
-  overlay.classList.toggle("popup_active");
-}
-function popup_text_toggle() {}
-function openTab(tabName) {
-  var i;
-  var x = document.getElementsByClassName("main");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  document.getElementById(tabName).style.display = "block";
-}
-
-function topbar(props) {
+  useEffect(() => {
+    profile_Data();
+  }, []);
   return (
-    <div className="topbar" onLoad={Dashboard_fun}>
+    <div className="topbar">
       {/* TOGGLE BUTTON STARTS*/}
       <div className="toggle">
         <i className="bx bx-menu" />
         <div className="dashboard">{props.PageNam}</div>
       </div>
-      {/* TOGGLE BUTTON ENDS */}
-      {/* PTOFILE STARTS */}
-      <div className="user">
-        <img src="profile.jpg" alt="" className />
-        <span className="profile_name">Profile</span>
-        <i className="bx bx-chevron-down" />
+      <div className="profile">
+        <PopupMenu>
+          <button className="user">
+            <div id="circle-avatar-profile">
+              <span>{Name_Letter}</span>
+            </div>{" "}
+            <p>Profile</p>
+            <i className="bx bx-chevron-down" />
+          </button>
+
+          <div className="card-profile ">
+            <div className="card-body px-4 py-4">
+              <div className="profile-main">
+                <div id="circle-avatar">
+                  <span>{Name_Letter}</span>
+                </div>
+
+                <h3>
+                  {userData.firstname} {userData.lastname}
+                </h3>
+                <p className="text-center ">{userData.mobilenum}</p>
+              </div>
+              <hr />
+
+              <p
+                className="mb-0"
+                style={{ color: "#bebebe", fontWeight: "bold", fontSize: 14 }}
+              >
+                Details
+              </p>
+
+              <div className="details-list">
+                <ul className="list">
+                  <li className="list-items">
+                    <h5>Aadhar Number</h5> {userData.aadharnum}
+                  </li>
+                  <li className="list-items">
+                    <h5>Voter Id</h5> {userData.voterid}
+                  </li>
+
+                  <li className="list-items">
+                    <h5>Date of Birth</h5> {userData.dob}
+                  </li>
+                  <li className="list-items">
+                    <h5>Mobile Number</h5> {userData.mobilenum}
+                  </li>
+                  <li className="list-items">
+                    <h5>Address</h5> {userData.address}
+                  </li>
+                </ul>
+              </div>
+              <div className="logoutbtn">
+                <button className="logout">Logout</button>
+              </div>
+
+              {/* <div className="d-grid">
+                <button className="btn btn-secondary">
+                  <small>Logout</small>
+                </button>
+              </div> */}
+            </div>
+          </div>
+        </PopupMenu>
       </div>
-      {/* PROFILE ENDS */}
     </div>
   );
-}
+};
 
-export default topbar;
+export default Topbar;

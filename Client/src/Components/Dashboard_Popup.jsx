@@ -1,19 +1,20 @@
-function Dashboard_Popup(props) {
-  return props.trigger ? (
-    <div id="popup" className={props.Step}>
-      <div className="popup_icon">
-        <i className="bx bx-detail" />
+const Dashboard_Popup = (props) => {
+  document.getElementById("pop-dismiss").addEventListener("click", function () {
+    document.getElementsByClassName("popup")[0].classList.add("active");
+  });
+  return (
+    <>
+      <div className="popup center">
+        <div className="icon">
+          <i class="bx bx-detail"></i>
+        </div>
+        <div className="pop_title">{props.Step}</div>
+        <div className="pop_description">{props.Description}</div>
+        <div className="dismiss_btn">
+          <button id="pop-dismiss"></button>
+        </div>
       </div>
-      <div className="popup_content">
-        <h2>{props.Step}</h2>
-        <div className="popup_text">{props.Message}</div>
-      </div>
-      <div className="dismiss">
-        <button className="dismiss_btn">Dismiss</button>
-      </div>
-    </div>
-  ) : (
-    ""
+    </>
   );
-}
+};
 export default Dashboard_Popup;

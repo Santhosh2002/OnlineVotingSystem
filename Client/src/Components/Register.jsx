@@ -2,6 +2,7 @@ import logo from "../assets/images/Logo 2.png";
 import { Link, useNavigate } from "react-router-dom";
 import React, { useState, Component } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import MyImageCaptureComponent from "./CaptureImage";
 import "react-toastify/dist/ReactToastify.css";
 
 class Register extends Component {
@@ -99,6 +100,7 @@ class Register extends Component {
         <div className="Home" id="Register_P">
           <div className="signin-signup">
             <form method="POST" action="#" className="sign-in-form">
+              {/* <MyImageCaptureComponent></MyImageCaptureComponent> */}
               <i className="fa-solid fa-circle-user" id="user_icon" />
               <h2 className="title">Voter Registration</h2>
               <div className="form-inputs">
@@ -187,6 +189,7 @@ class Register extends Component {
                     onChange={(e) => this.setState({ address: e.target.value })}
                   />
                 </div>
+                <input type="button" id="imagebtn" defaultValue="Capture" />
               </div>
               <input
                 type="button"

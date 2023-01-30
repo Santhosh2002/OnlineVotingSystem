@@ -1,10 +1,17 @@
 import React, { Component } from "react";
 
 class Contact extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      year: "",
+    };
+    this.setyear = this.setyear.bind(this);
+  }
+  setyear = () => {
+    this.setState({ year: new Date().getFullYear() });
+  };
   render() {
-    function year() {
-      document.write(new Date().getFullYear());
-    }
     return (
       <div className="contact" id="contact">
         <div className="content">
@@ -88,13 +95,15 @@ class Contact extends Component {
           </div>
         </div>
         <div className="coyrights">
-          <p> Thank You © Copyrights</p>
-          {year}, All Rights Reserved.
-          <p />
-          <i className="fa-brands fa-facebook" />
-          <i className="fa-brands fa-instagram" />
-          <i className="fa-brands fa-twitter" />
-          <i className="fa-brands fa-linkedin" />
+          <p>
+            {" "}
+            Thank You © Copyrights
+            {this.setyear}, All Rights Reserved.
+            <i className="fa-brands fa-facebook" />
+            <i className="fa-brands fa-instagram" />
+            <i className="fa-brands fa-twitter" />
+            <i className="fa-brands fa-linkedin" />
+          </p>
         </div>
       </div>
     );

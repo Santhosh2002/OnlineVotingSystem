@@ -10,6 +10,7 @@ require("../db/conn");
 const NewUser = require("../model/NewUserSchema");
 const Admin = require("../model/adminSchema");
 const Election = require("../model/electionSchema");
+const Voter_Authenticate = require("../middleware/Voter_Authenticate");
 
 router.get("/", (req, res) => {
   res.send("Hello");
@@ -85,18 +86,27 @@ router.post("/login", async (req, res) => {
 });
 
 router.post("/authenticate", async (req, res) => {
-  const { voterid, mobile } = req.body;
+  const { voterid, mobilenum } = req.body;
 
-  if (voterid == 0 || mobile == 0) {
+  if (voterid == 0 || mobilenum == 0) {
     res.status(421).json({ message: "Please fill empty Fields" });
   }
   try {
     const userExist = await NewUser.findOne({
       voterid: voterid,
-      mobilenum: mobile,
+      mobilenum: mobilenum,
     });
     if (userExist) {
-      return res.status(201).json({ message: "Authentication Successfull" });
+      token = await userExist.generateAuthToken();
+      console.log(token);
+      res.cookie("jwtoken", token, {
+        expires: new Date(Date.now() + 25892000000),
+        httpOnly: true,
+      });
+
+      return res
+        .status(201)
+        .json({ message: "Authentication Successfull", token });
     }
     res.status(202).json({ message: "Authentication Unsuccessfull" });
   } catch (err) {
@@ -132,6 +142,9 @@ router.post("/CandidateLi", (req, res) => {
 router.use(cookieParser());
 
 router.get("/otp_Confirm", authenticate, (req, res) => {
+  res.send(req.rootUser);
+});
+router.get("/voter_otpConfirm", Voter_Authenticate, (req, res) => {
   res.send(req.rootUser);
 });
 module.exports = router;

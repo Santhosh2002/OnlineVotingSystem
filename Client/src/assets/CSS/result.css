@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --orange: #ff9c2c;
+  --white: #fff;
+  --blue: #4590b1;
+  --dark_orange: #bf6f13;
+  --grey: #333;
+  --green: #18b60d;
+  --light_grey: rgb(144, 143, 143);
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* MAIN */
+
+#Resu {
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100vh;
+  background: var(--white);
+  transition: all 0.5s ease;
+}
+
+#Resu.active {
+  width: calc(100% - 80px);
+  left: 80px;
+}
+
+#Resu .topbar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+#Resu .toggle {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--grey);
+}
+
+#Resu .toggle i {
+  font-size: 35px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+#Resu .toggle .dashboard {
+  font-size: 35px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+#Resu .user {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  min-width: 160px;
+  background: #f5f6fa;
+  border: 2px solid #efeef1;
+  border-radius: 6px;
+  padding: 0 15px 0 2px;
+}
+
+#Resu .user img {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-left: 4px;
+}
+
+#Resu .user .profile_name {
+  font-size: 17px;
+  font-weight: 500;
+  color: #333;
+  margin: 0 10px;
+  white-space: nowrap;
+}
+
+#Resu .user i {
+  color: #333;
+  font-size: 30px;
+}
+
+/* FOMRS */
+#Resu .Home {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  margin-top: 10px;
+  width: calc(100% - 50px);
+  left: 30px;
+  right: 20px;
+}
+
+#Resu .Home .text-box {
+  position: relative;
+  background: var(--white);
+  padding: 20px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+/* RESPONSIVENESS */
+
+@media (max-width: 991px) {
+  .navigation {
+    left: -300px;
+  }
+
+  .navigation.active {
+    left: 0px;
+    width: 300px;
+  }
+
+  .main {
+    width: 100%;
+    left: 0;
+  }
+
+  .main.active {
+    left: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navigation {
+    width: 100%;
+    left: -100%;
+    z-index: 1000;
+  }
+
+  .navigation.active {
+    width: 100%;
+    left: 0;
+  }
+
+  .toggle i {
+    z-index: 10001;
+  }
+
+  .main.active .toggle i {
+    position: fixed;
+    right: 0;
+    left: initial;
+    color: var(--white);
+  }
+}
+
+#Resu .text-box {
+  text-align: center;
+  width: 100%;
+}
+#Resu .text-box .graph {
+  width: 85%;
+  padding: 5px;
+  margin-left: 3.5%;
+  border-radius: 20px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+#Resu .text-box .Res {
+  display: flex;
+  flex-direction: row;
+}
+#Resu .text-box .candidates {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#Resu .text-box .results {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#Resu .text-box .candidates .card {
+  position: relative;
+  background: var(--white);
+  width: 1000px;
+  height: 90px;
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 15px;
+  margin-right: 20px;
+}
+#Resu .text-box .results .Resultcard {
+  position: relative;
+  background: var(--white);
+  width: 100px;
+  height: 90px;
+  margin-right: 20px;
+  padding: 35px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 15px;
+}
+#Resu .Resultcard .imgBox {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+#Resu .Resultcard .imgBox img {
+  width: 50px;
+  height: 50px;
+}
+#Resu .card .imgBox {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+#Resu .card .imgBox img {
+  width: 50px;
+  height: 50px;
+}

@@ -1,6 +1,5 @@
 import Topbar from "./Top_bar";
 import React from "react";
-import Popup from "reactjs-popup";
 import Dashboard_Popup from "./Dashboard_Popup";
 const User_Dashboard = () => {
   var Data = [
@@ -78,13 +77,16 @@ const User_Dashboard = () => {
           <i className="bx bx-right-arrow-alt" />
           <span
             className="text"
-            onClick={
+            id="open-popup"
+            onClick={function (event) {
+              document
+                .getElementsByClassName("popup")[0]
+                .classList.add("active");
               <Dashboard_Popup
-                trigger={true}
                 Step={value.Step}
-                Message={value.Message}
-              ></Dashboard_Popup>
-            }
+                Description={value.Message}
+              ></Dashboard_Popup>;
+            }}
           >
             Show More
           </span>
@@ -120,7 +122,7 @@ const User_Dashboard = () => {
             <div className="upcoming_elections">
               <div className="cardheader">
                 <h2>Upcoming Elections</h2>
-                <a href="#" className="btn">
+                <a href="#" className="btn1">
                   View All
                 </a>
               </div>
@@ -136,46 +138,99 @@ const User_Dashboard = () => {
                 <tbody>{valueCard}</tbody>
               </table>
             </div>
-            {/* <div className="recent_news">
-                <div className="cardheader">
-                  <h2>Recent News</h2>
-                </div>
-                <table>
-                    <tbody>
-                    <tr>
-                      <td width="60px">
-                        <div className="imgbox">
-                          <img src="Images/HT_logo.jpg" alt="" />
-                        </div>
-                      </td><td><h4>BJP wins in West Bengal's Nandigram<br />
-                          <span><a target="_blank" href="https://www.hindustantimes.com/india-news/bjp-wins-election-in-west-bengal-s-nandigram-cooperative-body-101663508160389.html">Know more</a></span></h4></td>
-                    </tr>
-                    <tr>
-                      <td width="60px">
-                        <div className="imgbox">
-                          <img src="Images/ABP_live.jpg" alt="" />
-                        </div>
-                      </td><td><h4>Maharashtra Gram Panchayat Results<br />
-                          <span><a target="_blank" href="https://news.abplive.com/news/india/maharashtra-gram-panchayat-election-result-2022-updates-bjp-eknath-shinde-shiv-sena-alliance-congress-ncp-1554096">Know more</a></span></h4></td>
-                    </tr>
-                    <tr>
-                      <td width="60px">
-                        <div className="imgbox">
-                          <img src="Images/BS_logo.jpg" alt="" />
-                        </div>
-                      </td><td><h4>Election Commission launched E-Patrika<br />
-                          <span><a target="_blank" href="https://currentaffairs.adda247.com/election-commission-of-india-launched-blo-e-patrika/">Know more</a></span></h4></td>
-                    </tr>
-                    <tr>
-                      <td width="60px">
-                        <div className="imgbox">
-                          <img src="Images/adda247_logo.jpg" alt="" />
-                        </div>
-                      </td><td><h4>EC team visits Gujarat ahead of polls<br />
-                          <span><a target="_blank" href="https://www.business-standard.com/article/current-affairs/ec-team-visits-gujarat-ahead-of-polls-reviews-election-preparedness-122091900048_1.html">Know more</a></span></h4></td>
-                    </tr>
-                  </tbody></table>
-              </div> */}
+            <div className="recent_news">
+              <div className="cardheader">
+                <h2>Recent News</h2>
+              </div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td width="60px">
+                      <div className="imgbox">
+                        <img src="Images/HT_logo.jpg" alt="" />
+                      </div>
+                    </td>
+                    <td>
+                      <h4>
+                        BJP wins in West Bengal's Nandigram
+                        <br />
+                        <span>
+                          <a
+                            target="_blank"
+                            href="https://www.hindustantimes.com/india-news/bjp-wins-election-in-west-bengal-s-nandigram-cooperative-body-101663508160389.html"
+                          >
+                            Know more
+                          </a>
+                        </span>
+                      </h4>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="60px">
+                      <div className="imgbox">
+                        <img src="Images/ABP_live.jpg" alt="" />
+                      </div>
+                    </td>
+                    <td>
+                      <h4>
+                        Maharashtra Gram Panchayat Results
+                        <br />
+                        <span>
+                          <a
+                            target="_blank"
+                            href="https://news.abplive.com/news/india/maharashtra-gram-panchayat-election-result-2022-updates-bjp-eknath-shinde-shiv-sena-alliance-congress-ncp-1554096"
+                          >
+                            Know more
+                          </a>
+                        </span>
+                      </h4>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="60px">
+                      <div className="imgbox">
+                        <img src="Images/BS_logo.jpg" alt="" />
+                      </div>
+                    </td>
+                    <td>
+                      <h4>
+                        Election Commission launched E-Patrika
+                        <br />
+                        <span>
+                          <a
+                            target="_blank"
+                            href="https://currentaffairs.adda247.com/election-commission-of-india-launched-blo-e-patrika/"
+                          >
+                            Know more
+                          </a>
+                        </span>
+                      </h4>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="60px">
+                      <div className="imgbox">
+                        <img src="Images/adda247_logo.jpg" alt="" />
+                      </div>
+                    </td>
+                    <td>
+                      <h4>
+                        EC team visits Gujarat ahead of polls
+                        <br />
+                        <span>
+                          <a
+                            target="_blank"
+                            href="https://www.business-standard.com/article/current-affairs/ec-team-visits-gujarat-ahead-of-polls-reviews-election-preparedness-122091900048_1.html"
+                          >
+                            Know more
+                          </a>
+                        </span>
+                      </h4>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

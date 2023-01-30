@@ -15,7 +15,7 @@ class Authentication extends Component {
     super(props);
     this.state = {
       voterid: "",
-      mobile: "",
+      mobilenum: "",
     };
     this.doSubmit = this.doSubmit.bind(this);
     // const { navigation } = this.props;
@@ -26,7 +26,7 @@ class Authentication extends Component {
   doSubmit = async (e) => {
     let user_captcha = document.getElementById("Captcha1").value;
     // const navigate = useNavigate();
-    const { voterid, mobile } = this.state;
+    const { voterid, mobilenum } = this.state;
     const res = await fetch("/authenticate", {
       method: "POST",
       headers: {
@@ -34,7 +34,7 @@ class Authentication extends Component {
       },
       body: JSON.stringify({
         voterid,
-        mobile,
+        mobilenum,
       }),
     });
 
@@ -45,12 +45,12 @@ class Authentication extends Component {
         toast.success("Success!  Authentication Successfull");
         loadCaptchaEnginge(6);
         document.getElementById("Captcha1").value = "";
-        window.location.href = "./ElectionList";
+        window.location.href = "./Authentication_OTP";
         // navigate("/ElectionList");
       } else if (res.status === 202) {
         toast.error("Unsuccess!  Authentication Failed");
       } else {
-        toast.warn("Captcha!  Invalid Captcha");
+        toast.info("Captcha!  Invalid Captcha");
         document.getElementById("Captcha1").value = "";
       }
     }
@@ -98,7 +98,7 @@ class Authentication extends Component {
                       id="Mobile"
                       placeholder="Mobile Number"
                       onChange={(e) =>
-                        this.setState({ mobile: e.target.value })
+                        this.setState({ mobilenum: e.target.value })
                       }
                     />
                   </div>
@@ -118,7 +118,7 @@ class Authentication extends Component {
                   <input
                     type="button"
                     id="Login"
-                    className="btn solid"
+                    className="btn1 solid"
                     onClick={() => this.doSubmit()}
                     defaultValue="Verify"
                   />

@@ -16,11 +16,15 @@ class OTP_Confirmation extends Component {
     this.state = {
       mobilenum: "",
       otp: "",
+      minutes: "",
+      seconds: "",
     };
     this.onSignInSubmit = this.onSignInSubmit.bind(this);
     this.verifyCode = this.verifyCode.bind(this);
     this.onCaptchVerify = this.onCaptchVerify.bind(this);
+    this.resendOnClick = this.resendOnClick.bind(this);
   }
+
   async componentDidMount() {
     const res = await fetch("/otp_Confirm", {
       method: "GET",
@@ -34,11 +38,32 @@ class OTP_Confirmation extends Component {
     console.log(data);
     const datanum = data.mobilenum;
     this.setState({ mobilenum: datanum });
-    this.onSignInSubmit();
+
     if (!res.status === 200) {
       const error = new Error(res.error);
       throw error;
     }
+    this.onCaptchVerify();
+    this.onSignInSubmit();
+
+    this.setState({ minutes: 1 });
+    this.setState({ seconds: 30 });
+    const interval = setInterval(() => {
+      if (this.state.seconds > 0) {
+        this.setState({ seconds: this.state.seconds - 1 });
+      }
+      if (this.state.seconds === 0) {
+        if (this.state.minutes === 0) {
+          clearInterval(interval);
+        } else {
+          this.setState({ seconds: 59 });
+          this.setState({ minutes: this.state.minutes - 1 });
+        }
+      }
+    }, 1000);
+    return () => {
+      clearInterval(interval);
+    };
   }
 
   onCaptchVerify() {
@@ -54,8 +79,8 @@ class OTP_Confirmation extends Component {
       auth
     );
   }
+
   onSignInSubmit() {
-    this.onCaptchVerify();
     const phoneNumber = "+91" + this.state.mobilenum;
     const appVerifier = window.recaptchaVerifier;
 
@@ -77,6 +102,9 @@ class OTP_Confirmation extends Component {
         // ...
       });
   }
+  // resttimer() {
+
+  // }
   resendOnClick() {
     const phoneNumber = "+91" + this.state.mobilenum;
     const appVerifier = window.recaptchaVerifier;
@@ -101,7 +129,7 @@ class OTP_Confirmation extends Component {
   }
   verifyCode() {
     const code = this.state.otp;
-    if (code != 0) {
+    if (code !== 0) {
       window.confirmationResult
         .confirm(code)
         .then((result) => {
@@ -116,6 +144,7 @@ class OTP_Confirmation extends Component {
           console.log(error);
           // User couldn't sign in (bad verification code?)
           // ...
+          toast.info("Incorrect!  Invalid OTP");
         });
     } else {
       toast.warn("Warning!  Please fill the Fields");
@@ -132,14 +161,6 @@ class OTP_Confirmation extends Component {
             <a href="index.html" className="Company">
               Online Voting System
             </a>
-            <div className="alertPopup">
-              <div className="alert" id="A1">
-                <strong>Unsuccess!</strong> Incorrect OTP.
-              </div>
-              <div className="alert warning" id="A4">
-                <strong>Warning!</strong> Please fill the Fields.
-              </div>
-            </div>
           </nav>
         </div>
         <div className="Home" id="OTP_P">
@@ -182,13 +203,37 @@ class OTP_Confirmation extends Component {
                     onChange={(e) => this.setState({ otp: e.target.value })}
                   />
                 </div>
-                <button id="Resend" onClick={this.resendOnClick}>
+                <button
+                  disabled={this.state.seconds > 0 || this.state.minutes > 0}
+                  style={{
+                    opacity:
+                      this.state.seconds > 0 || this.state.minutes > 0
+                        ? 0.5
+                        : 1,
+                  }}
+                  id="Resend"
+                  onClick={this.resendOnClick}
+                >
                   <i className="fa-solid fa-rotate-right" />
                 </button>
               </div>
               <div className="timer">
-                <p>Resend</p> <span id="timer" />
+                <p>Resend</p>
+                {this.state.seconds > 0 || this.state.minutes > 0 ? (
+                  <span id="timer">
+                    {this.state.minutes < 10
+                      ? `0${this.state.minutes}`
+                      : this.state.minutes}
+                    :
+                    {this.state.seconds < 10
+                      ? `0${this.state.seconds}`
+                      : this.state.seconds}
+                  </span>
+                ) : (
+                  <span> Didnt receive otp</span>
+                )}
               </div>
+
               <input
                 type="button"
                 id="Submit"
