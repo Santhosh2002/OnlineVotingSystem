@@ -250,6 +250,16 @@ class Authentication_OTP extends Component {
                 >
                   Connect
                 </button>
+                {/* <button
+                  id="Submit"
+                  disabled={this.state.btnState === 0}
+                  style={{ opacity: this.state.btnState === 0 ? 0 : 1 }}
+                  className="btn solid"
+                  defaultValue="Get Right To Vote"
+                  onClick={rightToVote}
+                >
+                  Right To Vote
+                </button> */}
               </form>
             </div>
           </div>

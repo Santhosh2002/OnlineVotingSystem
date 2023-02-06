@@ -14,6 +14,7 @@ import ElectionList from "../Components/Election_list";
 import Polling from "../Components/Polling";
 import Results from "../Components/Result";
 import Authentication_OTP from "../Components/Authentication_OTP";
+
 import "../assets/CSS/OTP_Confirmation.css";
 import "../assets/CSS/Candidate_List.css";
 import "../assets/CSS/Election_list.css";
@@ -131,6 +132,14 @@ function App() {
           </>
         }
       ></Route>
+      {/* <Route
+        path="AdminDashboard"
+        element={
+          <>
+            <AdminDashboard></AdminDashboard>{" "}
+          </>
+        }
+      ></Route> */}
       <Route
         path="/"
         element={

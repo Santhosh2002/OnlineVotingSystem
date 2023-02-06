@@ -20,6 +20,7 @@ const Topbar = (props) => {
     setLetter(letter);
     // console.log(data);
   };
+
   useEffect(() => {
     profile_Data();
   }, []);

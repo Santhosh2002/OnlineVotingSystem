@@ -5,7 +5,6 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const authenticate = require("../middleware/authenticate");
 const cookieParser = require("cookie-parser");
-
 require("../db/conn");
 const NewUser = require("../model/NewUserSchema");
 const Admin = require("../model/adminSchema");
@@ -32,6 +31,10 @@ router.post("/register", async (req, res) => {
     mobilenum == 0
   ) {
     res.status(421).json({ message: "Please fill empty Fields" });
+  } else if (aadharnum.length != 12) {
+    res.status(423).json({ message: "Invalid Aadharnumber" });
+  } else if (mobilenum.length != 10) {
+    res.status(424).json({ message: "Invalid Mobile Number" });
   }
   try {
     const userExist = await NewUser.findOne({ aadharnum: aadharnum, dob: dob });
@@ -57,10 +60,14 @@ router.post("/register", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   const { aadharnum, mobilenum } = req.body;
-
   if (aadharnum == 0 || mobilenum == 0) {
     res.status(421).json({ message: "Please fill empty Fields" });
+  } else if (aadharnum.length != 12) {
+    res.status(422).json({ message: "Invalid Aadharnumber" });
+  } else if (mobilenum.length != 10) {
+    res.status(423).json({ message: "Invalid Mobile Number" });
   }
+
   try {
     let token;
     const userExist = await NewUser.findOne({
@@ -103,7 +110,6 @@ router.post("/authenticate", async (req, res) => {
         expires: new Date(Date.now() + 25892000000),
         httpOnly: true,
       });
-
       return res
         .status(201)
         .json({ message: "Authentication Successfull", token });

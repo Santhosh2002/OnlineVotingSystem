@@ -52,6 +52,10 @@ class Register extends Component {
         // navigate("/ElectionList");
       } else if (res.status === 422) {
         toast.error("Unsuccess!  User Already Exists");
+      } else if (res.status === 423) {
+        toast.error("Unsuccess!  Invalid AadharNumber");
+      } else if (res.status === 424) {
+        toast.error("Unsuccess!  Invalid Mobile Number");
       } else {
         toast.info("Captcha!  Invalid Captcha");
       }

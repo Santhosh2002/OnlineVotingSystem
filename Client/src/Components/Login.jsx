@@ -44,6 +44,10 @@ class Login extends Component {
     // console.log(data);
     if (res.status === 421) {
       toast.warn("Warning!  Please fill the Fields");
+    } else if (res.status === 422) {
+      toast.error("Unsuccess!  Invalid AadharNumber");
+    } else if (res.status === 423) {
+      toast.error("Unsuccess!  Invalid Mobile Number");
     } else {
       if (res.status === 201 && validateCaptcha(user_captcha) === true) {
         // new OTP_Confirmation().onSignInSubmit();
@@ -52,8 +56,6 @@ class Login extends Component {
         window.location.href = "./OTP_Confirm";
         loadCaptchaEnginge(6);
         document.getElementById("Captcha1").value = "";
-
-        // navigate("/ElectionList");
       } else if (res.status === 202) {
         toast.error("Unsuccess!  Authentication Failed");
       } else {
