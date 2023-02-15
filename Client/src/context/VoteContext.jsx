@@ -70,12 +70,12 @@ export const VoteProvider = ({ children }) => {
       voteContract.giveRightToVote(currentAccount);
     } catch (error) {}
   };
-  const votesPerCandidate = async () => {
-    try {
-      const voteContract = getEthereumContract();
-      voteContract.votesPerCandidate();
-    } catch (error) {}
-  };
+  // const votesPerCandidate = async () => {
+  //   try {
+  //     const voteContract = getEthereumContract();
+  //     voteContract.votesPerCandidate();
+  //   } catch (error) {}
+  // };
   const winner = async () => {
     const voteContract = getEthereumContract();
     console.log(voteContract.winnervotecount());

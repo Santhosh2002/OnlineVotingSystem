@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../assets/images/Plugin icon - 1.png";
+import logo from "../../assets/images/Plugin icon - 1.png";
+import "../../assets/CSS/SideNavbar.css";
+
 class SideNav extends Component {
   state = {};
   render() {

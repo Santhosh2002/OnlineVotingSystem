@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import Topbar from "./Top_bar";
-import app from "./firebaseConfig";
-import { VoteContext } from "../context/VoteContext";
+import Topbar from "../Topbar/Top_bar";
+import app from "../Login/firebaseConfig";
+import { VoteContext } from "../../context/VoteContext";
+import "../../assets/CSS/Authentication_OTP.css";
+
 import {
   getAuth,
   RecaptchaVerifier,
@@ -155,7 +157,7 @@ class Authentication_OTP extends Component {
   }
 
   render() {
-    const { connectWallet, currentAccount, rightToVote } = this.context;
+    const { connectWallet } = this.context;
     return (
       <div className="main" id="Auth_OTP">
         <Topbar PageNam="Authentication" />

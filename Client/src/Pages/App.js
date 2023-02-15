@@ -1,38 +1,23 @@
-import Home from "../Components/Home";
-import Header from "../Components/Header";
-import Contact from "../Components/Contact";
-import About from "../Components/About_1";
-import Login from "../Components/Login";
-import Register from "../Components/Register";
-import AdminLogin from "../Components/Admin_Login";
-import OTPConfirm from "../Components/OTP_Confirmation";
-import UserDashboard from "../Components/User_Dashboard";
-import SideNavbar from "../Components/Sidenav";
-import Authentication from "../Components/Authentication";
-import CandidateList from "../Components/Candidates_list";
-import ElectionList from "../Components/Election_list";
-import Polling from "../Components/Polling";
-import Results from "../Components/Result";
-import Authentication_OTP from "../Components/Authentication_OTP";
-
-import "../assets/CSS/OTP_Confirmation.css";
-import "../assets/CSS/Candidate_List.css";
-import "../assets/CSS/Election_list.css";
-import "../assets/CSS/Authenticate.css";
-import "../assets/CSS/Polling.css";
-import "../assets/CSS/SideNavbar.css";
-import "../assets/CSS/Topbar.css";
-import "../assets/CSS/Dashboard.css";
-import "../assets/CSS/index.css";
-import "../assets/CSS/login.css";
-import "../assets/CSS/Register.css";
-import "../assets/CSS/Admin_Login.css";
-import "../assets/CSS/result.css";
-import "../assets/CSS/Authentication_OTP.css";
+import Home from "../Components/Home/Home";
+import Header from "../Components/Home/Header";
+import Contact from "../Components/Home/Contact";
+import About from "../Components/Home/About_1";
+import Login from "../Components/Login/Login";
+import Register from "../Components/Register/Register";
+import OTPConfirm from "../Components/Login/OTP_Confirmation";
+import UserDashboard from "../Components/Voter/User_Dashboard";
+import SideNavbar from "../Components/Topbar/Sidenav";
+import Authentication from "../Components/Authentication/Authentication";
+import CandidateList from "../Components/Candidates/Candidates_list";
+import ElectionList from "../Components/Election/Election_list";
+import Polling from "../Components/Election/Polling";
+import Results from "../Components/Election/Result";
+import AuthenticationOTP from "../Components/Authentication/Authentication_OTP";
+import AdminHome from "./AdminHome/AdminHome";
+import AdminLogin from "./AdminLogin/Admin_Login";
 import { Route, Routes } from "react-router-dom";
-import { useEffect } from "react";
-import Web3 from "web3";
-import { Result } from "antd";
+import NewVoter from "./NewVoter/NewVoter";
+import List from "./List/List";
 
 function App() {
   return (
@@ -128,7 +113,31 @@ function App() {
         element={
           <>
             <SideNavbar></SideNavbar>
-            <Authentication_OTP></Authentication_OTP>
+            <AuthenticationOTP></AuthenticationOTP>
+          </>
+        }
+      ></Route>
+      <Route
+        path="AdminHome"
+        element={
+          <>
+            <AdminHome></AdminHome>
+          </>
+        }
+      ></Route>
+      <Route
+        path="NewVoter"
+        element={
+          <>
+            <NewVoter></NewVoter>
+          </>
+        }
+      ></Route>
+      <Route
+        path="List"
+        element={
+          <>
+            <List></List>
           </>
         }
       ></Route>

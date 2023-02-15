@@ -1,4 +1,5 @@
-import Topbar from "./Top_bar";
+import Topbar from "../Topbar/Top_bar";
+import "../../assets/CSS/Candidate_List.css";
 
 const CandidatesList = () => {
   var candidates_details = [
@@ -55,7 +56,7 @@ const CandidatesList = () => {
     return (
       <div className="card C1">
         <div className="imgBox">
-          <img src={value.url} onclick="openTab('Poll')" />
+          <img src={value.url} alt="Poll" onclick="openTab('Poll')" />
           <h2>{value.Candidate}</h2>
           <p>{value.Party}</p>
         </div>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Image from "../assets/images/male.png";
-import Image2 from "../assets/images/female.png";
+import Image from "../../assets/images/male.png";
+import Image2 from "../../assets/images/female.png";
 class About_1 extends Component {
   render() {
     var names = ["Santhosh", "Gaurav", "Lingareddy"];
@@ -9,7 +9,7 @@ class About_1 extends Component {
       return (
         <div className="card ">
           <div className="imgBox">
-            <img src={Image} />
+            <img src={Image} alt="Developers" />
             <h2>{name}</h2>
           </div>
           <div className="content_c">
@@ -25,7 +25,7 @@ class About_1 extends Component {
       return (
         <div className="card ">
           <div className="imgBox">
-            <img src={Image2} />
+            <img src={Image2} alt="Developers" />
             <h2>{name}</h2>
           </div>
           <div className="content_c">

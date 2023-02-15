@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import logo from "../assets/images/Logo 2.png";
+import logo from "../../assets/images/Logo 2.png";
+import "../../assets/CSS/OTP_Confirmation.css";
+
 import app from "./firebaseConfig";
 import {
   getAuth,
@@ -156,7 +158,7 @@ class OTP_Confirmation extends Component {
         <div className="header" id="OTP">
           <nav>
             <a href="index.html">
-              <img src={logo} />
+              <img src={logo} alt="logo"/>
             </a>
             <a href="index.html" className="Company">
               Online Voting System

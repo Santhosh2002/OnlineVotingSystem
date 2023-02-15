@@ -1,14 +1,13 @@
-import Topbar from "./Top_bar";
+import Topbar from "../Topbar/Top_bar";
 import React, { Component } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import {
   loadCaptchaEnginge,
   LoadCanvasTemplate,
-  LoadCanvasTemplateNoReload,
   validateCaptcha,
 } from "react-simple-captcha";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "../../assets/CSS/Authenticate.css";
 
 class Authentication extends Component {
   constructor(props) {

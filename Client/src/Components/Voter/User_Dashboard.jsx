@@ -1,6 +1,8 @@
-import Topbar from "./Top_bar";
+import Topbar from "../Topbar/Top_bar";
 import React from "react";
-import Dashboard_Popup from "./Dashboard_Popup";
+import DashboardPopup from "./Dashboard_Popup";
+import "../../assets/CSS/Dashboard.css";
+
 const User_Dashboard = () => {
   var Data = [
     {
@@ -82,10 +84,10 @@ const User_Dashboard = () => {
               document
                 .getElementsByClassName("popup")[0]
                 .classList.add("active");
-              <Dashboard_Popup
+              <DashboardPopup
                 Step={value.Step}
                 Description={value.Message}
-              ></Dashboard_Popup>;
+              ></DashboardPopup>;
             }}
           >
             Show More
@@ -122,7 +124,7 @@ const User_Dashboard = () => {
             <div className="upcoming_elections">
               <div className="cardheader">
                 <h2>Upcoming Elections</h2>
-                <a href="#" className="btn1">
+                <a className="btn1">
                   View All
                 </a>
               </div>
@@ -156,7 +158,7 @@ const User_Dashboard = () => {
                         <br />
                         <span>
                           <a
-                            target="_blank"
+                            target="_blank" rel="noreferrer"
                             href="https://www.hindustantimes.com/india-news/bjp-wins-election-in-west-bengal-s-nandigram-cooperative-body-101663508160389.html"
                           >
                             Know more
@@ -177,7 +179,7 @@ const User_Dashboard = () => {
                         <br />
                         <span>
                           <a
-                            target="_blank"
+                            target="_blank"rel="noreferrer"
                             href="https://news.abplive.com/news/india/maharashtra-gram-panchayat-election-result-2022-updates-bjp-eknath-shinde-shiv-sena-alliance-congress-ncp-1554096"
                           >
                             Know more
@@ -198,7 +200,7 @@ const User_Dashboard = () => {
                         <br />
                         <span>
                           <a
-                            target="_blank"
+                            target="_blank"rel="noreferrer"
                             href="https://currentaffairs.adda247.com/election-commission-of-india-launched-blo-e-patrika/"
                           >
                             Know more

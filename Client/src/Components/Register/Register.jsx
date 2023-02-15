@@ -1,9 +1,9 @@
-import logo from "../assets/images/Logo 2.png";
-import { Link, useNavigate } from "react-router-dom";
-import React, { useState, Component } from "react";
+import logo from "../../assets/images/Logo 2.png";
+import { Link} from "react-router-dom";
+import React, { Component } from "react";
 import { ToastContainer, toast } from "react-toastify";
-import MyImageCaptureComponent from "./CaptureImage";
 import "react-toastify/dist/ReactToastify.css";
+import "../../assets/CSS/Register.css";
 
 class Register extends Component {
   constructor(props) {

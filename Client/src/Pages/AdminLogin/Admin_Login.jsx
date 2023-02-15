@@ -1,5 +1,7 @@
-import logo from "../assets/images/Logo 2.png";
-import { Link, useNavigate } from "react-router-dom";
+import logo from "../../assets/images/Logo 2.png";
+import "../../assets/CSS/Admin_Login.css";
+
+import { Link} from "react-router-dom";
 import React, { useState } from "react";
 
 const Admin_Login = () => {

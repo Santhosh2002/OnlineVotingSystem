@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-import Topbar from "./Top_bar";
+import React from "react";
+import Topbar from "../Topbar/Top_bar";
+import "../../assets/CSS/Election_list.css";
 
 const Election_list = () => {
   var Data = [
@@ -64,7 +65,6 @@ const Election_list = () => {
       <div className="tab">
         <input type="radio" name="acc" id={value.acc} />
         <label htmlFor={value.acc} className={value.Status}>
-          <h2 />
           <table className={value.Status}>
             <thead>
               <tr>
