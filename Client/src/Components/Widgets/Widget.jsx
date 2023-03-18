@@ -11,14 +11,14 @@ const Widgets = ({ type }) => {
     case "Voters":
       data = {
         title: "Voters",
-        count: "2,500",
-        percentage: "20%",
+        count: "1,12,500",
+        percentage: "50%",
         icon: (
           <PersonIcon
             className="icon"
             style={{
-              color: "orange",
-              backgroundColor: "rgba(255, 255, 255, 0.5)",
+              color: "goldenrod",
+              backgroundColor: "rgba(218, 165, 32, 0.2)",
             }}
           />
         ),
@@ -36,7 +36,7 @@ const Widgets = ({ type }) => {
             className="icon"
             style={{
               color: "green",
-              backgroundColor: "rgba(255, 255, 255, 0.5)",
+              backgroundColor: "rgba(0, 128, 0, 0.2)",
             }}
           />
         ),
@@ -46,14 +46,14 @@ const Widgets = ({ type }) => {
     case "Total Votes":
       data = {
         title: "Total Votes",
-        count: "2,500",
+        count: "52,500",
         percentage: "40%",
         icon: (
           <HowToVoteIcon
             className="icon"
             style={{
-              color: "red",
-              backgroundColor: "rgba(255, 255, 255, 0.5)",
+              color: "crimson",
+              backgroundColor: "rgba(255, 0, 0, 0.2)",
             }}
           />
         ),
@@ -69,8 +69,8 @@ const Widgets = ({ type }) => {
           <PollIcon
             className="icon"
             style={{
-              color: "lightblue",
-              backgroundColor: "rgba(255, 255, 255, 0.5)",
+              color: "#3399ff",
+              backgroundColor: "rgba(0, 255, 255, 0.2)",
             }}
           />
         ),

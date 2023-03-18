@@ -1,9 +1,10 @@
 .navbar {
   height: 60px;
-  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   font-size: 14px;
+  background-color: rgb(244, 242, 239);
   color: #5555;
   .wrapper {
     width: 100%;
@@ -41,8 +42,11 @@
           height: 40px;
           border-radius: 5px;
           padding: 10px 10px 10px 10px;
+          box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
           cursor: pointer;
-          background-color: bisque;
+          outline: none;
+          border: none;
+          background-color: #e5ddca;
           .avatar {
             width: 35px;
             height: 35px;

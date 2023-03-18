@@ -1,7 +1,7 @@
 .sideBar {
   flex: 1;
   min-height: 100vh;
-  background-color: white;
+  background-color: rgb(244, 242, 239);
   .top {
     display: flex;
     flex-direction: row;
@@ -14,7 +14,7 @@
       img {
         width: 40px;
         height: 40px;
-        border-radius: 15px;
+        border-radius: 10px;
       }
     }
     .title {

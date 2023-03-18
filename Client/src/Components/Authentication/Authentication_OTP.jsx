@@ -42,14 +42,13 @@ class Authentication_OTP extends Component {
     const data = await res.json();
     console.log(data);
     const datanum = data.mobilenum;
-    console.log(data.mobilenum);
-    this.setState({ mobilenum: datanum });
 
+    this.setState({ mobilenum: datanum });
+    console.log(data.mobilenum);
     if (!res.status === 200) {
       const error = new Error(res.error);
       throw error;
     }
-    setTimeout(() => {}, 2000);
 
     this.onCaptchVerify();
     this.onSignInSubmit();
@@ -87,7 +86,7 @@ class Authentication_OTP extends Component {
       auth
     );
   }
-  onSignInSubmit() {
+  async onSignInSubmit() {
     const phoneNumber = "+91" + this.state.mobilenum;
     const appVerifier = window.recaptchaVerifier;
 

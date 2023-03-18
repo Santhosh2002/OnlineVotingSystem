@@ -1,0 +1,58 @@
+.card-profile {
+  color: black;
+  .card-body {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border: 2px solid #efeef1;
+    border-radius: 6px;
+    padding: 15px 15px 15px 15px;
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .list {
+    list-style-type: none;
+    li {
+      margin-top: 10px;
+      overflow-wrap: break-word;
+    }
+    h5 {
+      position: relative;
+      display: inline-block;
+      min-width: 120px;
+      margin-right: 5px;
+    }
+    h5::after {
+      content: ":";
+      position: absolute;
+      right: -5px;
+    }
+  }
+  .connectbtn {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    .connect {
+      justify-content: center;
+      width: 150px;
+      position: relative;
+      align-items: center;
+      background: #e5ddca;
+      border: 2px solid #efeef1;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #333;
+      padding: 6px 6px 6px 6px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      outline: none;
+      border: none;
+    }
+  }
+}
