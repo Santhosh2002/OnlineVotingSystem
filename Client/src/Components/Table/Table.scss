@@ -1,0 +1,27 @@
+.table {
+  background-color: #111;
+
+  .tableCell {
+    color: gray;
+    text-align: center;
+  }
+  .tableCellt {
+    color: gray;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .status {
+    padding: 5px;
+    border-radius: 5px;
+
+    &.Pending {
+      background-color: #f0ac4e2c;
+      color: #f0ad4e;
+    }
+    &.Approved {
+      background-color: #5cb85c34;
+      color: #5cb85c;
+    }
+  }
+}

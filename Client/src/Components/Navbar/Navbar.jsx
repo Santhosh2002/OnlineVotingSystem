@@ -14,7 +14,7 @@ const Navbar = () => {
           </div>
           <div className="items">
             <div className="item">
-              <Profile></Profile>
+              <Profile width="300px"></Profile>
             </div>
           </div>
         </div>

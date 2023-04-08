@@ -19,9 +19,7 @@ const Featured = () => {
         </div>
         <p className="title">Active Polling</p>
         <p className="amount">4200</p>
-        <p className="desc">
-          Previous transactions processing. Last payments may not be included.
-        </p>
+        <p className="desc">Total polling for the current election</p>
       </div>
     </div>
   );

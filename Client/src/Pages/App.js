@@ -16,9 +16,8 @@ import AuthenticationOTP from "../Components/Authentication/Authentication_OTP";
 import AdminHome from "./AdminHome/AdminHome";
 import AdminLogin from "./AdminLogin/Admin_Login";
 import { Route, Routes } from "react-router-dom";
-import NewVoter from "./NewVoter/NewVoter";
 import List from "./List/List";
-
+import NewCandidate from "./NewCandidate/NewCandi";
 function App() {
   return (
     <Routes>
@@ -125,19 +124,20 @@ function App() {
           </>
         }
       ></Route>
-      <Route
-        path="NewVoter"
-        element={
-          <>
-            <NewVoter></NewVoter>
-          </>
-        }
-      ></Route>
+
       <Route
         path="List"
         element={
           <>
             <List></List>
+          </>
+        }
+      ></Route>
+      <Route
+        path="NewCandidate"
+        element={
+          <>
+            <NewCandidate></NewCandidate>
           </>
         }
       ></Route>

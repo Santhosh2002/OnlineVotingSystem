@@ -2,7 +2,7 @@ import React from "react";
 import { PopupMenu } from "react-simple-widgets";
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
 import "./Profile.scss";
-const Profile = () => {
+const Profile = (props) => {
   const Name_Letter = "J";
   return (
     <div className="profile">
@@ -17,7 +17,7 @@ const Profile = () => {
         </button>
 
         <div className="card-profile ">
-          <div className="card-body px-4 py-4">
+          <div className="card-body px-4 py-4" style={props}>
             <div className="main">
               <div id="circle">
                 <span>{Name_Letter}</span>
