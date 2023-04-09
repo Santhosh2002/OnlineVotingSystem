@@ -13,7 +13,15 @@ const electionSchema = new mongooose.Schema({
     type: String,
     reruired: true,
   },
-  url: {
+  aadharnum: {
+    type: Number,
+    reruired: true,
+  },
+  gender: {
+    type: String,
+    reruired: true,
+  },
+  age: {
     type: String,
     reruired: true,
   },

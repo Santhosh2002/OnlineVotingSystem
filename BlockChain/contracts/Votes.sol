@@ -57,7 +57,7 @@ contract Votes {
   
   mapping(address => Voter) public voters;
   
-  address public Admin;
+  address public Admin = 0x26600A58B7cCEC510D5A1b9a85271dE2AA0CeDCd;
 
   constructor(bytes32[] memory candidateDetails) {
      

@@ -1,9 +1,8 @@
-import React, { Component } from "react";
+import React, { Component, useContext } from "react";
 import Topbar from "../Topbar/Top_bar";
 import app from "../Login/firebaseConfig";
 import { VoteContext } from "../../context/VoteContext";
 import "../../assets/CSS/Authentication_OTP.css";
-
 import {
   getAuth,
   RecaptchaVerifier,
@@ -11,8 +10,10 @@ import {
 } from "firebase/auth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import App from "../../Pages/App";
+import { ReqDataContextProvider } from "../../context/dataContext";
 const auth = getAuth(app);
-
+// const requestData = createContext();
 class Authentication_OTP extends Component {
   static contextType = VoteContext;
 
@@ -24,6 +25,7 @@ class Authentication_OTP extends Component {
       minutes1: "",
       seconds1: "",
       btnState: "",
+      data: "",
     };
     this.onSignInSubmit = this.onSignInSubmit.bind(this);
     this.verifyCode = this.verifyCode.bind(this);
@@ -40,11 +42,14 @@ class Authentication_OTP extends Component {
       credentials: "include",
     });
     const data = await res.json();
-    console.log(data);
-    const datanum = data.mobilenum;
 
+    const datanum = data.mobilenum;
     this.setState({ mobilenum: datanum });
-    console.log(data.mobilenum);
+    console.log("Number", data.mobilenum);
+
+    this.setState({ data: data });
+    console.log(data);
+
     if (!res.status === 200) {
       const error = new Error(res.error);
       throw error;
@@ -52,9 +57,11 @@ class Authentication_OTP extends Component {
 
     this.onCaptchVerify();
     this.onSignInSubmit();
+
     this.setState({ btnState: 0 });
     this.setState({ minutes1: 1 });
     this.setState({ seconds1: 30 });
+
     const interal1 = setInterval(() => {
       if (this.state.seconds1 > 0) {
         this.setState({ seconds1: this.state.seconds1 - 1 });
@@ -86,7 +93,8 @@ class Authentication_OTP extends Component {
       auth
     );
   }
-  async onSignInSubmit() {
+  onSignInSubmit() {
+    console.log(this.state.mobilenum);
     const phoneNumber = "+91" + this.state.mobilenum;
     const appVerifier = window.recaptchaVerifier;
 
@@ -109,6 +117,7 @@ class Authentication_OTP extends Component {
       });
   }
   resendOnClick() {
+    console.log(this.state.mobilenum);
     const phoneNumber = "+91" + this.state.mobilenum;
     const appVerifier = window.recaptchaVerifier;
 
@@ -141,8 +150,8 @@ class Authentication_OTP extends Component {
           toast.success("Success!  Authentication Successfull");
           // window.location.href = "./ElectionList";
           this.setState({ btnState: 1 });
-          const user = result.user;
-          console.log(user);
+          // const user = result.user;
+          // console.log(user);
           // ...
         })
         .catch((error) => {
@@ -156,9 +165,15 @@ class Authentication_OTP extends Component {
   }
 
   render() {
-    const { connectWallet } = this.context;
+    const { connectWallet, currentAccount } = this.context;
+
     return (
+      // <requestData.Provider value={{ reData, currentAccount }}>
+
       <div className="main" id="Auth_OTP">
+        <App val="currentAccount"></App>
+
+        {/* <ReqDataContextProvider data="123456789"></ReqDataContextProvider> */}
         <Topbar PageNam="Authentication" />
         <div className="Home">
           <ToastContainer
@@ -266,8 +281,10 @@ class Authentication_OTP extends Component {
           </div>
         </div>
       </div>
+      // </requestData.Provider>
     );
   }
 }
 
 export default Authentication_OTP;
+// export { requestData };

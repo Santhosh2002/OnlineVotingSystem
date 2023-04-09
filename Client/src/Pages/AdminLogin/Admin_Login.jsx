@@ -1,7 +1,7 @@
 import logo from "../../assets/images/Logo 2.png";
 import "../../assets/CSS/Admin_Login.css";
-
-import { Link} from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import { Link } from "react-router-dom";
 import React, { useState } from "react";
 
 const Admin_Login = () => {
@@ -21,15 +21,14 @@ const Admin_Login = () => {
         password,
       }),
     });
-    const data = await res.json();
 
-    if (data.status === 400 || !data) {
-      window.alert("Invalid Login");
-      console.log("Invlid Login");
+    if (res.status === 201) {
+      toast.success("Success!  Login Successfull");
+      window.location.href = "./AdminHome";
+    } else if (res.status === 422) {
+      toast.warn("Warning!  Please fill the Fields");
     } else {
-      window.alert("Login successfull");
-      console.log("Login successfull");
-      // navigate("/OTP_Confirm");
+      toast.error("Unsuccess!  Invalid Credentials");
     }
   };
   return (
@@ -57,6 +56,18 @@ const Admin_Login = () => {
         </nav>
       </div>
       <div className="Home" id="Admin_P">
+        <ToastContainer
+          position="top-right"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+        />
         <div className="signin-signup">
           <form method="POST" action="#" className="sign-in-form">
             <i className="fa-solid fa-circle-user" />

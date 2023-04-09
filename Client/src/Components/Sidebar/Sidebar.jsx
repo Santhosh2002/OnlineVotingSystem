@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Sidebar.scss";
 import logo from "../../assets/images/Logo 2.png";
 import DashboardIcon from "@mui/icons-material/Dashboard";
@@ -24,7 +24,7 @@ const Sidebar = () => {
         <div className="center">
           <ul>
             <Link
-              to="/users"
+              to="/AdminHome"
               style={{ color: "black", textDecoration: "none" }}
             >
               <li>
@@ -32,10 +32,7 @@ const Sidebar = () => {
                 <span>Dashboard</span>
               </li>
             </Link>
-            <Link
-              to="/users"
-              style={{ color: "black", textDecoration: "none" }}
-            >
+            <Link to="/List" style={{ color: "black", textDecoration: "none" }}>
               <li>
                 <HowToRegIcon className="icon" />
                 <span>Voter's List</span>
@@ -43,7 +40,7 @@ const Sidebar = () => {
             </Link>
             <p className="title">Manage Candidates</p>
             <Link
-              to="/users"
+              to="/NewCandidate"
               style={{ color: "black", textDecoration: "none" }}
             >
               <li>
@@ -80,7 +77,7 @@ const Sidebar = () => {
               </li>
             </Link>
             <Link
-              to="/users"
+              to="/ResultsAdmin"
               style={{ color: "black", textDecoration: "none" }}
             >
               <li>

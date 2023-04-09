@@ -1,9 +1,29 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { PopupMenu } from "react-simple-widgets";
-import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
+import { VoteContext } from "../../context/VoteContext";
 import "./Profile.scss";
 const Profile = (props) => {
-  const Name_Letter = "J";
+  const [adminData, setAdminData] = useState("");
+  const [NameLetter, setLetter] = useState();
+  const { currentAccount, connectWallet } = useContext(VoteContext);
+  const adminprofileData = async () => {
+    const res = await fetch("/adminauth", {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+    });
+    const data = await res.json();
+    setAdminData(data);
+
+    let letter = adminData.name.charAt(0).toUpperCase();
+    setLetter(letter);
+  };
+  useEffect(() => {
+    adminprofileData();
+  }, []);
   return (
     <div className="profile">
       <PopupMenu>
@@ -20,10 +40,10 @@ const Profile = (props) => {
           <div className="card-body px-4 py-4" style={props}>
             <div className="main">
               <div id="circle">
-                <span>{Name_Letter}</span>
+                <span>{NameLetter}</span>
               </div>
 
-              <h3>John Doe</h3>
+              <h3>{adminData.name}</h3>
               <p className="text-center ">System Admin</p>
             </div>
             <hr />
@@ -38,24 +58,26 @@ const Profile = (props) => {
             <div className="details-list">
               <ul className="list">
                 <li className="list-items">
-                  <h5>Employee Id</h5> OVS5742165
+                  <h5>Employee Id</h5> {adminData.employeeid}
                 </li>
                 <li className="list-items">
-                  <h5>Date of Birth</h5> 10-23-1970
+                  <h5>Date of Birth</h5> {adminData.dob}
                 </li>
                 <li className="list-items">
-                  <h5>Mobile Number</h5> 9876543210
+                  <h5>Mobile Number</h5> {adminData.mobilenumber}
                 </li>
                 <li className="list-items">
-                  <h5>Email</h5> admin@DigitialIndia.gov.in
+                  <h5>Email</h5> {adminData.username}
                 </li>
                 <li className="list-items">
-                  <h5>Address</h5> ABCD
+                  <h5>Address</h5> {adminData.address}
                 </li>
               </ul>
             </div>
             <div className="connectbtn">
-              <button className="connect">Connect</button>
+              <button className="connect" onClick={connectWallet}>
+                Connect
+              </button>
             </div>
           </div>
         </div>
