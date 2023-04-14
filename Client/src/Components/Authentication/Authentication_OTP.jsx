@@ -10,7 +10,7 @@ import {
 } from "firebase/auth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import App from "../../Pages/App";
+// import App from "../../Pages/App";
 import { ReqDataContextProvider } from "../../context/dataContext";
 const auth = getAuth(app);
 // const requestData = createContext();
@@ -26,6 +26,7 @@ class Authentication_OTP extends Component {
       seconds1: "",
       btnState: "",
       data: "",
+      Address: "",
     };
     this.onSignInSubmit = this.onSignInSubmit.bind(this);
     this.verifyCode = this.verifyCode.bind(this);
@@ -41,11 +42,17 @@ class Authentication_OTP extends Component {
       },
       credentials: "include",
     });
+    const Response = await fetch("/RequestApi", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({}),
+    });
     const data = await res.json();
-
+    console.log(data);
     const datanum = data.mobilenum;
     this.setState({ mobilenum: datanum });
-    console.log("Number", data.mobilenum);
 
     this.setState({ data: data });
     console.log(data);
@@ -166,12 +173,12 @@ class Authentication_OTP extends Component {
 
   render() {
     const { connectWallet, currentAccount } = this.context;
-
+    // this.setState({ Account: currentAccount });
     return (
       // <requestData.Provider value={{ reData, currentAccount }}>
 
       <div className="main" id="Auth_OTP">
-        <App val="currentAccount"></App>
+        {/* <App val="currentAccount"></App> */}
 
         {/* <ReqDataContextProvider data="123456789"></ReqDataContextProvider> */}
         <Topbar PageNam="Authentication" />

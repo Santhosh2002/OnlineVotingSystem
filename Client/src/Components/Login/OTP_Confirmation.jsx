@@ -158,7 +158,7 @@ class OTP_Confirmation extends Component {
         <div className="header" id="OTP">
           <nav>
             <a href="index.html">
-              <img src={logo} alt="logo"/>
+              <img src={logo} alt="logo" />
             </a>
             <a href="index.html" className="Company">
               Online Voting System
