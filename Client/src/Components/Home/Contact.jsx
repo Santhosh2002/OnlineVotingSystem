@@ -67,11 +67,11 @@ class Contact extends Component {
             <div className="text">
               <h3>Address</h3>
               <p>
-                Indian Institute of Information Technology, Vadodara
+                Indian
                 <br />
-                Gandhinagar, Gujarat,
+                State: XYZ
                 <br />
-                382028
+                123456
               </p>
             </div>
           </div>
