@@ -42,20 +42,17 @@ class Authentication_OTP extends Component {
       },
       credentials: "include",
     });
-    const Response = await fetch("/RequestApi", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({}),
-    });
+    // const Response = await fetch("/RequestApi", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({}),
+    // });
     const data = await res.json();
     console.log(data);
     const datanum = data.mobilenum;
     this.setState({ mobilenum: datanum });
-
-    this.setState({ data: data });
-    console.log(data);
 
     if (!res.status === 200) {
       const error = new Error(res.error);
@@ -89,7 +86,7 @@ class Authentication_OTP extends Component {
 
   onCaptchVerify() {
     window.recaptchaVerifier = new RecaptchaVerifier(
-      "recaptcha-container1",
+      "recaptcha-container",
       {
         size: "invisible",
         callback: (response) => {
@@ -101,7 +98,6 @@ class Authentication_OTP extends Component {
     );
   }
   onSignInSubmit() {
-    console.log(this.state.mobilenum);
     const phoneNumber = "+91" + this.state.mobilenum;
     const appVerifier = window.recaptchaVerifier;
 
@@ -124,7 +120,6 @@ class Authentication_OTP extends Component {
       });
   }
   resendOnClick() {
-    console.log(this.state.mobilenum);
     const phoneNumber = "+91" + this.state.mobilenum;
     const appVerifier = window.recaptchaVerifier;
 
@@ -172,7 +167,7 @@ class Authentication_OTP extends Component {
   }
 
   render() {
-    const { connectWallet, currentAccount } = this.context;
+    const { connectWallet } = this.context;
     // this.setState({ Account: currentAccount });
     return (
       // <requestData.Provider value={{ reData, currentAccount }}>
@@ -195,7 +190,7 @@ class Authentication_OTP extends Component {
             pauseOnHover
             theme="colored"
           />
-          <div id="recaptcha-container1"></div>
+          <div id="recaptcha-container"></div>
           <div className="text-box">
             <div className="signin-signup">
               <form method="GET" action="#" className="sign-in-form">
@@ -269,7 +264,12 @@ class Authentication_OTP extends Component {
                   style={{ opacity: this.state.btnState === 0 ? 0 : 1 }}
                   className="btn solid"
                   defaultValue="Connect"
-                  onClick={connectWallet}
+                  onClick={[
+                    connectWallet,
+                    (e) => {
+                      window.location.href = "./ElectionList";
+                    },
+                  ]}
                 >
                   Connect
                 </button>

@@ -92,6 +92,33 @@ router.post("/login", async (req, res) => {
     console.log(err);
   }
 });
+
+router.post("/voteridlogin", async (req, res) => {
+  const { voterid } = req.body;
+  if (voterid == null) {
+    res.status(421).json({ message: "Please fill empty Fields" });
+  }
+  try {
+    let token;
+    const userExist = await NewUser.findOne({
+      voterid: voterid,
+    });
+    if (userExist) {
+      token = await userExist.generateAuthToken();
+      res.cookie("jwtoken", token, {
+        expires: new Date(Date.now() + 25892000000),
+        httpOnly: true,
+      });
+
+      return res
+        .status(201)
+        .json({ message: "Authentication Successfull", token });
+    }
+    res.status(202).json({ message: "Authentication Unsuccessfull" });
+  } catch (err) {
+    console.log(err);
+  }
+});
 router.post("/adminlogin", async (req, res) => {
   const { username, password } = req.body;
 

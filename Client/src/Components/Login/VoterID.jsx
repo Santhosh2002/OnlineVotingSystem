@@ -10,12 +10,11 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../../assets/CSS/login.css";
 
-class Login extends Component {
+class VoterID extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      aadharnum: "",
-      mobilenum: "",
+      id_number: "",
     };
     this.Login_fun = this.Login_fun.bind(this);
   }
@@ -27,16 +26,15 @@ class Login extends Component {
     e.preventDefault();
     let user_captcha = document.getElementById("Captcha").value;
 
-    const { aadharnum, mobilenum } = this.state;
+    const { voterid } = this.state;
 
-    const res = await fetch("/login", {
+    const res = await fetch("voteridlogin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        aadharnum,
-        mobilenum,
+        voterid,
       }),
     });
     // const data = await res.json();
@@ -52,7 +50,7 @@ class Login extends Component {
         // new OTP_Confirmation().onSignInSubmit();
 
         toast.success("Success!  Authentication Successfull");
-        window.location.href = "./OTP_Confirm";
+        window.location.href = "./VoterID_OTP";
         loadCaptchaEnginge(6);
         document.getElementById("Captcha1").value = "";
       } else if (res.status === 202) {
@@ -99,7 +97,7 @@ class Login extends Component {
                   <Link to="/AdminLogin">ADMIN LOGIN</Link>
                 </li>
                 <li>
-                  <Link to="/VoterID">VOTER ID LOGIN</Link>
+                  <Link to="/Login">AADHAR NUMBER LOGIN</Link>
                 </li>
               </ul>
             </div>
@@ -110,29 +108,19 @@ class Login extends Component {
           <div className="signin-signup">
             <form method="POST" action="#" className="sign-in-form">
               <i className="fa-solid fa-circle-user" />
-              <h2 className="title">AADHAR No. Login</h2>
+              <h2 className="title">VOTER ID Login</h2>
               <div className="input-field">
                 <i className="fas fa-user" />
                 <input
-                  type="number"
+                  type="text"
                   name="aadharnum"
                   id="Aadhar"
-                  placeholder="Aadhar Number"
+                  placeholder="Voter ID"
                   autoComplete="off"
-                  onChange={(e) => this.setState({ aadharnum: e.target.value })}
+                  onChange={(e) => this.setState({ voterid: e.target.value })}
                 />
               </div>
-              <div className="input-field">
-                <i className="fas fa-user" />
-                <input
-                  type="number"
-                  name="mobilenum"
-                  id="Mobile"
-                  placeholder="Mobile Number"
-                  autoComplete="off"
-                  onChange={(e) => this.setState({ mobilenum: e.target.value })}
-                />
-              </div>
+
               <div className=" input-field">
                 <i className="fas fa-lock" />
                 <input type="text" id="Captcha" placeholder="Enter CAPTCHA" />
@@ -147,12 +135,6 @@ class Login extends Component {
                   defaultValue="Generate OTP"
                 />
               </div>
-              <p>
-                New User? Click Here to{" "}
-                <Link to="/Register" className="Login_link">
-                  Register
-                </Link>
-              </p>
             </form>
           </div>
         </div>
@@ -161,4 +143,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default VoterID;

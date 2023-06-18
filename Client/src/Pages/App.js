@@ -3,6 +3,8 @@ import Header from "../Components/Home/Header";
 import Contact from "../Components/Home/Contact";
 import About from "../Components/Home/About_1";
 import Login from "../Components/Login/Login";
+import VoterID from "../Components/Login/VoterID";
+import VoterOTP_Confirmation from "../Components/Login/VoterOTP_Confirmation";
 import Register from "../Components/Register/Register";
 import OTPConfirm from "../Components/Login/OTP_Confirmation";
 import UserDashboard from "../Components/Voter/User_Dashboard";
@@ -30,6 +32,22 @@ function App(props) {
           element={
             <>
               <Login></Login>
+            </>
+          }
+        />
+        <Route
+          path="VoterID_OTP"
+          element={
+            <>
+              <VoterOTP_Confirmation></VoterOTP_Confirmation>
+            </>
+          }
+        />
+        <Route
+          path="VoterID"
+          element={
+            <>
+              <VoterID></VoterID>
             </>
           }
         />

@@ -7,6 +7,7 @@ import "../../assets/CSS/Topbar.css";
 const Topbar = (props) => {
   const [userData, setUserData] = useState("");
   const [Name_Letter, setLetter] = useState("");
+
   const profile_Data = async () => {
     const res = await fetch("/otp_Confirm", {
       method: "GET",
@@ -85,7 +86,12 @@ const Topbar = (props) => {
                 </ul>
               </div>
               <div className="logoutbtn">
-                <button className="logout">Logout</button>
+                <button
+                  className="logout"
+                  onChange={(e) => (window.location.href = "./Login")}
+                >
+                  Logout
+                </button>
               </div>
 
               {/* <div className="d-grid">
