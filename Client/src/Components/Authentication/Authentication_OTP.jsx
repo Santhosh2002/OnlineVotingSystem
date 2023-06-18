@@ -264,12 +264,7 @@ class Authentication_OTP extends Component {
                   style={{ opacity: this.state.btnState === 0 ? 0 : 1 }}
                   className="btn solid"
                   defaultValue="Connect"
-                  onClick={[
-                    connectWallet,
-                    (e) => {
-                      window.location.href = "./ElectionList";
-                    },
-                  ]}
+                  onClick={connectWallet}
                 >
                   Connect
                 </button>
