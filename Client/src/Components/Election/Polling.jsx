@@ -3,6 +3,8 @@ import React from "react";
 import { useContext } from "react";
 import { VoteContext } from "../../context/VoteContext";
 import "../../assets/CSS/Polling.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Polling = () => {
   const {
@@ -11,7 +13,7 @@ const Polling = () => {
     setCand_Index,
     castyourvote,
   } = useContext(VoteContext);
-
+  const notify = () => toast.success("Vote Casted Successfully");
   var PollingP = [
     {
       Index: 0,
@@ -64,6 +66,7 @@ const Polling = () => {
                 checkIfWalletIsConnected();
                 setCandidate(name.Candidate);
                 setCand_Index(name.Index);
+                notify();
               }}
               className="votebutton"
             >
@@ -78,9 +81,22 @@ const Polling = () => {
     <div className="main" id="Poll">
       {/* TOPBAR */}
       <Topbar PageNam="Polling" />
+
       {/* TOPBAR ENDS */}
       {/* FORMS STARTS */}
       <div className="Home">
+        <ToastContainer
+          position="top-right"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+        />
         <div className="text-box">
           <h1 id="title">Select your choice</h1>
           <div className="Res">
